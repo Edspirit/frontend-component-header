@@ -14,9 +14,11 @@ import frMessages from './messages/fr.json';
 import kokrMessages from './messages/ko_KR.json';
 import ptbrMessages from './messages/pt_BR.json';
 import zhcnMessages from './messages/zh_CN.json';
+import faIRMessages from './messages/fa_IR.json';
 
 const messages = {
   ar: arMessages,
+  fa: faIRMessages,
   ca: caMessages,
   he: heMessages,
   id: idMessages,
