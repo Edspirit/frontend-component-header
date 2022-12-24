@@ -14,6 +14,7 @@ import DesktopHeader from './DesktopHeader';
 import MobileHeader from './MobileHeader';
 
 import messages from './Header.messages';
+import useLogo from './hooks/useLogo';
 
 ensureConfig([
   'LMS_BASE_URL',
@@ -30,17 +31,20 @@ subscribe(APP_CONFIG_INITIALIZED, () => {
   }, 'Header additional config');
 });
 
-function Header({ intl }) {
+const Header = ({ intl }) => {
   const { authenticatedUser, config } = useContext(AppContext);
 
+  const logo = useLogo();
   const mainMenu = [
     {
       type: 'item',
       href: `${config.LMS_BASE_URL}/dashboard`,
       content: intl.formatMessage(messages['header.links.courses']),
-    },
-  ];
-
+    }, {
+      type: 'item',
+      href: ''.concat(config.LMS_BASE_URL, '/courses'),
+      content: intl.formatMessage(messages['header.links.content.search']),
+    }];
   const orderHistoryItem = {
     type: 'item',
     href: config.ORDER_HISTORY_URL,
@@ -89,7 +93,7 @@ function Header({ intl }) {
   ];
 
   const props = {
-    logo: config.LOGO_URL,
+    logo,
     logoAltText: config.SITE_NAME,
     logoDestination: `${config.LMS_BASE_URL}/dashboard`,
     loggedIn: authenticatedUser !== null,
@@ -110,7 +114,7 @@ function Header({ intl }) {
       </Responsive>
     </>
   );
-}
+};
 
 Header.propTypes = {
   intl: intlShape.isRequired,
