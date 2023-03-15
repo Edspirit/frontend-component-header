@@ -1,6 +1,6 @@
-import { AppContext } from '@edx/frontend-platform/react';
+import { AppContext } from "@edx/frontend-platform/react";
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from "react";
 
 export default function useLogo() {
   const [data, setData] = useState(undefined);
@@ -14,5 +14,5 @@ export default function useLogo() {
         console.log(err);
       });
   }, [config.AC_INSTANCE_CONFIG_API_URL, config.LMS_BASE_URL]);
-  return `${data?.logo}`;
+  return `${data?.logo ?? data?.edspirit_logo}`;
 }
