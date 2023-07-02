@@ -154,7 +154,7 @@ const StudioDesktopHeader = injectIntl(StudioDesktopHeaderBase);
 
 const StudioHeader = ({ intl, actionRowContent }) => {
   const { authenticatedUser, config } = useContext(AppContext);
-  const logo = useLogo();
+  const logo = useLogo(config);
 
   const userMenu = authenticatedUser === null ? [] : [
     {

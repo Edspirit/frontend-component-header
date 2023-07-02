@@ -30,7 +30,7 @@ const LearningHeader = ({
   courseOrg, courseNumber, courseTitle, intl, showUserDropdown,
 }) => {
   const { authenticatedUser } = useContext(AppContext);
-  const logo = useLogo();
+  const logo = useLogo(config);
 
   const headerLogo = (
     <LinkedLogo

@@ -34,7 +34,7 @@ subscribe(APP_CONFIG_INITIALIZED, () => {
 const Header = ({ intl }) => {
   const { authenticatedUser, config } = useContext(AppContext);
 
-  const logo = useLogo();
+  const logo = useLogo(config);
   const mainMenu = [
     {
       type: 'item',
