@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { AppContext } from '@edx/frontend-platform/react';
+import { useContext, useEffect, useState } from 'react';
 import logoPlaceholder from '../assets/org-logo-place-holder.svg';
 
-export default function useLogo(config) {
+export default function useLogo() {
   const [data, setData] = useState();
-
+ const { config } = useContext(AppContext);
   useEffect(() => {
     if (config.AC_INSTANCE_CONFIG_API_URL && config.LMS_BASE_URL) {
       fetch(`${config.LMS_BASE_URL}${config.AC_INSTANCE_CONFIG_API_URL}`)

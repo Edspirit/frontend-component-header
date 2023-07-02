@@ -29,8 +29,8 @@ LinkedLogo.propTypes = {
 const LearningHeader = ({
   courseOrg, courseNumber, courseTitle, intl, showUserDropdown,
 }) => {
-  const { authenticatedUser,config } = useContext(AppContext);
-  const logo = useLogo(config);
+  const { authenticatedUser } = useContext(AppContext);
+  const logo = useLogo();
 
   const headerLogo = (
     <LinkedLogo
