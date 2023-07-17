@@ -1,8 +1,9 @@
 import { Button, Icon } from '@edx/paragon';
-import { ArrowForward, KeyboardArrowDown } from '@edx/paragon/icons';
+import { ArrowForward } from '@edx/paragon/icons';
 import { Link, useHistory } from 'react-router-dom';
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
 // import useGetSubjects from '../../../../hooks/useGetSubjects';
+import { ReactComponent as ArrowDown } from '../../assets/icon-arrow-down.svg';
 
 const DropdownNavHeader = () => {
   // const { subjects, coursesCounter } = useGetSubjects();
@@ -31,7 +32,7 @@ const DropdownNavHeader = () => {
             />
           </span>
           <Icon
-            src={KeyboardArrowDown}
+            src={ArrowDown}
             style={{ height: '20px', width: '20px' }}
             className="arrow-down"
           />
