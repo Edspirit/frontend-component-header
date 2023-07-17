@@ -1,7 +1,7 @@
 .nav-items-wrapper {
   @extend .d-flex;
   height: 76px;
-  font-size: $font-size-base-sm;
+  font-size: 0.875rem;
   .dropdown-nav-header {
     @extend .d-flex, .align-items-center, .position-relative;
     &:hover {
