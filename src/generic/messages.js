@@ -11,6 +11,10 @@ const messages = defineMessages({
     defaultMessage: 'Sign in',
     description: 'Text in a button, prompting the user to log in.',
   },
+  'header.search.placeholder': {
+    id: 'header.search.placeholder',
+    defaultMessage: 'What do you want to learn?',
+  },
 });
 
 export default messages;
