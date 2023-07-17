@@ -1,11 +1,17 @@
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import React from 'react';
 
-const NavHeader = () => (
-  <nav>
+const NavHeader = () => {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push('/homepage/overview');
+  }
+
+ return <nav>
     <ul className="nav-wrapper">
-      <NavLink to="/overview" activeClassName="active">
+      <NavLink  activeClassName="active" onClick={handleClick}>
         <div className="border-bottom" />
         <li>
           <FormattedMessage
@@ -32,7 +38,7 @@ const NavHeader = () => (
           />
         </li>
       </NavLink>
-      <NavLink exact to="/discover" activeClassName="active">
+      <a exact href="/homepage/discover" activeClassName="active">
         <li>
           <div className="border-bottom" />
           <FormattedMessage
@@ -40,9 +46,9 @@ const NavHeader = () => (
             defaultMessage="Discover"
           />
         </li>
-      </NavLink>
+      </a>
     </ul>
   </nav>
-);
+}
 
 export default NavHeader;

@@ -13,20 +13,18 @@ const DropdownNavHeader = () => {
   const coursesCounter=0
   
   const history = useHistory();
-  function handleClick() {
-    history.push('/homepage/overview');
-  }
+
   return (
     <nav className="nav-items-wrapper">
-      <Link className="nav-link-header mx-2.5" onClick={handleClick}>
+      <Link className="nav-link-header mx-2.5" to="/overview">
         <FormattedMessage
           id="header.nav.dashboard"
           defaultMessage="Dashboard"
         />
       </Link>
-      <a className="nav-link-header mx-2.5" href="/homepage/discover">
+      <Link className="nav-link-header mx-2.5" to="/discover">
         <FormattedMessage id="header.nav.discover" defaultMessage="Discover" />
-      </a>
+      </Link>
       <div className="dropdown-nav-header">
         <div className="d-flex mx-2 align-items-center">
           <span className=" mr-2">
