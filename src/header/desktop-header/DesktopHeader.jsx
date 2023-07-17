@@ -13,6 +13,7 @@ import NavHeader from '../nav-header/NavHeader';
 import DropdownNavHeader from '../dropdown-nav-header/DropdownNavHeader';
 import DefaultLogo from '../../assets/NavLogo-placeholder.svg';
 import handleRedirect from '../handleRedirect';
+import React from 'react';
 // import {
 //   resetSearchFilters,
 //   setSearchString,

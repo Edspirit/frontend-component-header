@@ -4,6 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
 // import useGetSubjects from '../../../../hooks/useGetSubjects';
 import { ReactComponent as ArrowDown } from '../../assets/icon-arrow-down.svg';
+import React from 'react';
+
 
 const DropdownNavHeader = () => {
   // const { subjects, coursesCounter } = useGetSubjects();

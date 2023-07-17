@@ -1,5 +1,6 @@
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
 import { NavLink } from 'react-router-dom';
+import React from 'react';
 
 const NavHeader = () => (
   <nav>
