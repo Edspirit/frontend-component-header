@@ -1,6 +1,6 @@
 import { AppContext } from '@edx/frontend-platform/react';
 import { Dropdown, Icon } from '@edx/paragon';
-import { useContext,React } from 'react';
+import { useContext } from 'react';
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
 import { ArrowDropDown } from '@edx/paragon/icons';
 import { Link } from 'react-router-dom';
