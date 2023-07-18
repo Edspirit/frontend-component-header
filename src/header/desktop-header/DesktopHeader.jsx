@@ -1,4 +1,4 @@
-import { Button, SearchField, Skeleton } from '@edx/paragon';
+import { Button, SearchField } from '@edx/paragon';
 import { Link, useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 import { AppContext } from '@edx/frontend-platform/react';
@@ -10,7 +10,6 @@ import {
 } from '@edx/frontend-platform/i18n';
 // import { useDispatch } from 'react-redux';
 import NavHeader from '../nav-header/NavHeader';
-import DropdownNavHeader from '../dropdown-nav-header/DropdownNavHeader';
 import DefaultLogo from '../../assets/NavLogo-placeholder.svg';
 import handleRedirect from '../handleRedirect';
 import React from 'react';
@@ -18,7 +17,7 @@ import React from 'react';
 //   resetSearchFilters,
 //   setSearchString,
 // } from '../../../../redux/slice/searchQuerySlice';
-// import ProfileDropdown from './ProfileDropdown';
+import ProfileDropdown from './ProfileDropdown';
 import messages from '../../generic/messages';
 import useLogo from '../../hooks/useLogo';
 
@@ -46,14 +45,16 @@ const DesktopHeader = ({ intl }) => {
               />
             </Link>
         </div>
-        {authenticatedUser ? <NavHeader /> : <DropdownNavHeader />}
+        <NavHeader /> 
       </div>
       <div className="d-flex right-side-wrapper">
         <SearchField
           onSubmit={handleSubmitSearch}
-          placeholder={intl.formatMessage(
-            messages['header.search.placeholder'],
-          )}
+          // placeholder={intl.formatMessage(
+          //   messages['header.search.placeholder'],
+          // )}
+          placeholder="what do you want to learn?"
+
         />
         {/* <div className="d-flex align-items-center">
             <Button variant="tertiary" size="sm" className="mx-1">
@@ -62,8 +63,7 @@ const DesktopHeader = ({ intl }) => {
           </div> */}
         <div className="sign-in-container ml-3">
           {authenticatedUser ? (
-            // <ProfileDropdown />
-          <>hi</>
+            <ProfileDropdown />
           ) : (
             <>
               <Button

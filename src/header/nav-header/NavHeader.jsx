@@ -1,54 +1,68 @@
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
-import { NavLink, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import React from 'react';
 
 const NavHeader = () => {
-  const history = useHistory();
+  const location = useLocation();
 
-  function handleClick() {
-    history.push('/homepage/overview');
-  }
-
- return <nav>
-    <ul className="nav-wrapper">
-      <NavLink  activeClassName="active" onClick={handleClick}>
-        <div className="border-bottom" />
-        <li>
-          <FormattedMessage
-            id="header.nav.overview"
-            defaultMessage="Overview"
-          />
-        </li>
-      </NavLink>
-      <NavLink to="/inprogress" activeClassName="active">
-        <li>
+  return (
+    <nav>
+      <ul className="nav-wrapper">
+        <a
+          className={location.pathname === '/homepage/overview' ? 'active' : ''}
+          href="/homepage/overview"
+        >
           <div className="border-bottom" />
-          <FormattedMessage
-            id="header.nav.inProgress"
-            defaultMessage="In Progress"
-          />
-        </li>
-      </NavLink>
-      <NavLink to="/completed" activeClassName="active">
-        <li>
-          <div className="border-bottom" />
-          <FormattedMessage
-            id="header.nav.completed"
-            defaultMessage="Completed"
-          />
-        </li>
-      </NavLink>
-      <a  href="/homepage/discover" >
-        <li>
-          <div className="border-bottom" />
-          <FormattedMessage
-            id="header.nav.discover"
-            defaultMessage="Discoverr"
-          />
-        </li>
-      </a>
-    </ul>
-  </nav>
-}
+          <li>
+            <FormattedMessage
+              id="header.nav.overview"
+              defaultMessage="Overview"
+            />
+          </li>
+        </a>
+        <a
+          href="/homepage/inprogress"
+          className={
+            location.pathname === '/homepage/inprogress' ? 'active' : ''
+          }
+        >
+          <li>
+            <div className="border-bottom" />
+            <FormattedMessage
+              id="header.nav.inProgress"
+              defaultMessage="In Progress"
+            />
+          </li>
+        </a>
+        <a
+          href="/homepage/completed"
+          className={
+            location.pathname === '/homepage/completed' ? 'active' : ''
+          }
+        >
+          <li>
+            <div className="border-bottom" />
+            <FormattedMessage
+              id="header.nav.completed"
+              defaultMessage="Completed"
+            />
+          </li>
+        </a>
+        <a
+          href="/homepage/discover"
+          className={location.pathname === '/homepage/discover' ? 'active' : ''}
+        >
+          <li>
+            <div className="border-bottom" />
+            <FormattedMessage
+              id="header.nav.discover"
+              defaultMessage="Discover"
+            />
+          </li>
+        </a>
+      </ul>
+    </nav>
+  );
+};
 
 export default NavHeader;

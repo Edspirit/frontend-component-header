@@ -1,13 +1,13 @@
 import { AppContext } from '@edx/frontend-platform/react';
 import { Dropdown, Icon } from '@edx/paragon';
-import { useContext } from 'react';
+import { useContext,React } from 'react';
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
 import { ArrowDropDown } from '@edx/paragon/icons';
 import { Link } from 'react-router-dom';
 import { getConfig } from '@edx/frontend-platform';
-import { ReactComponent as Avatar } from '../../../../assets/header-avatar.svg';
-import { handleLogout } from '../../../../utils/handleRedirect';
-import useGetUserProfile from '../../../../hooks/useGetUserProfile';
+import { ReactComponent as Avatar } from '../../assets/header-avatar.svg';
+import { handleLogout } from '../handleRedirect';
+import useGetUserProfile from '../useGetUserProfile';
 
 const ProfileDropdown = () => {
   const { authenticatedUser } = useContext(AppContext);
@@ -37,7 +37,7 @@ const ProfileDropdown = () => {
         <Dropdown.Item
           href={`https://apps.${getConfig().LMS_BASE_URL.replace(
             'https://',
-            '',
+            ''
           )}/profile/u/${authenticatedUser?.username}`}
         >
           <FormattedMessage
@@ -48,7 +48,7 @@ const ProfileDropdown = () => {
         <Dropdown.Item
           href={`https://apps.${getConfig().LMS_BASE_URL.replace(
             'https://',
-            '',
+            ''
           )}/account`}
         >
           <FormattedMessage
@@ -65,7 +65,7 @@ const ProfileDropdown = () => {
         <Dropdown.Item
           href={`https://billing.${getConfig().LMS_BASE_URL.replace(
             'https://',
-            '',
+            ''
           )}`}
         >
           <FormattedMessage
