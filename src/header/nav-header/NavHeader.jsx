@@ -38,12 +38,12 @@ const NavHeader = () => {
           />
         </li>
       </NavLink>
-      <a exact href="/homepage/discover" activeClassName="active">
+      <a  href="/homepage/discover" >
         <li>
           <div className="border-bottom" />
           <FormattedMessage
             id="header.nav.discover"
-            defaultMessage="Discover"
+            defaultMessage="Discoverr"
           />
         </li>
       </a>
