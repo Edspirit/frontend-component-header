@@ -21,11 +21,10 @@ import ProfileDropdown from './ProfileDropdown';
 import messages from '../../generic/messages';
 import useLogo from '../../hooks/useLogo';
 
-
 const DesktopHeader = ({ intl }) => {
   const history = useHistory();
   const { authenticatedUser } = useContext(AppContext);
-   const logo = useLogo();
+  const logo = useLogo();
   // const dispatch = useDispatch();
 
   const handleSubmitSearch = (value) => {
@@ -38,23 +37,18 @@ const DesktopHeader = ({ intl }) => {
     <div className="d-flex flex-row justify-content-between align-items-center header-wrapper">
       <div className="left-side-container">
         <div className="logo-container mr-4">
-            <Link to="/">
-              <img
-                src={logo ?? DefaultLogo}
-                alt="edspirit-logo"
-              />
-            </Link>
+          <Link to="/">
+            <img src={logo ?? DefaultLogo} alt="edspirit-logo" />
+          </Link>
         </div>
-        <NavHeader /> 
+        <NavHeader />
       </div>
       <div className="d-flex right-side-wrapper">
         <SearchField
           onSubmit={handleSubmitSearch}
-          // placeholder={intl.formatMessage(
-          //   messages['header.search.placeholder'],
-          // )}
-          placeholder="what do you want to learn?"
-
+          placeholder={intl.formatMessage(
+            messages['header.search.placeholder']
+          )}
         />
         {/* <div className="d-flex align-items-center">
             <Button variant="tertiary" size="sm" className="mx-1">

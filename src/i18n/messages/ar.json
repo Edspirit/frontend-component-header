@@ -26,5 +26,19 @@
   "header.menu.account.label": "حساب",
   "header.menu.orderHistory.label": "سجل الطلبات",
   "header.navigation.skipNavLink": "التخطي إلى المحتوى الرئيسي",
-  "header.menu.signOut.label": "تسجيل الخروج"
+  "header.menu.signOut.label": "تسجيل الخروج",
+  "header.nav.overview": "نظرة عامة",
+  "header.nav.inProgress": "فى تقدم",
+  "header.dropdownOption.account": "حساب",
+  "header.nav.completed": "تم الانتهاء",
+  "header.search.placeholder": "ماذا تريد أن تتعلم؟",
+  "header.nav.discover": "اكتشف",
+  "header.nav.dashboard": "لوحة التحكم",
+  "header.dropdown.subjects": "الموضوعات",
+  "header.dropdownOption.profile": "الملف الشخصي",
+  "header.dropdownOption.dashboard": "لوحة التحكم",
+  "header.dropdownOption.signOut": "تسجيل خروج",
+  "header.signIn": "تسجيل الدخول",
+  "header.register": "انشاء حساب جديد",
+  "header.dropdownOption.orderHistory": "سجل الطلبات"
 }

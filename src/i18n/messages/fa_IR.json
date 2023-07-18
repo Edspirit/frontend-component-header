@@ -29,5 +29,19 @@
   "header.menu.account.label": "حساب",
   "header.menu.orderHistory.label": "تاریخچه سفارش",
   "header.navigation.skipNavLink": "رفتن به محتوای اصلی.",
-  "header.menu.signOut.label": "خروج از سیستم"
+  "header.menu.signOut.label": "خروج از سیستم",
+  "header.signIn": "ورود",
+  "header.register": "ثبت‌نام",
+  "header.dropdownOption.profile": "صفحه شخصی",
+  "header.dropdownOption.account": "حساب‌کاربری",
+  "header.dropdownOption.dashboard": "پیشخوان",
+  "header.dropdownOption.orderHistory": "تاریخچه سفارش‌ها",
+  "header.dropdownOption.signOut": "خروج",
+  "header.dropdown.subjects": "موضوع‌ها",
+  "header.nav.dashboard": "پیشخوان",
+  "header.nav.discover": "جستجو",
+  "header.nav.inProgress": "در حال پیشرفت",
+  "header.nav.overview": "نگاه‌کلی",
+  "header.search.placeholder": "مایل به دریافت چه آموزشی هستید؟",
+  "header.nav.completed": "تکمیل شده"
 }
