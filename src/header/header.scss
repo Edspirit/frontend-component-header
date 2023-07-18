@@ -110,6 +110,16 @@
   border-radius: 8px;
 }
 .mobile-bottom-nav-wrapper {
+  .nav-item {
+    padding: 0.5rem 1rem;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $gray-700;
+      font-weight: 500;
+    }
+  }
   position: fixed;
   bottom: 0;
   z-index: 100;
@@ -135,6 +145,7 @@
       border: 1px solid $light-300;
       .form-control {
         padding: unset;
+        width: 0;
       }
     }
   }
