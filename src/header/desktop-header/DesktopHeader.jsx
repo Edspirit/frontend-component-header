@@ -30,7 +30,8 @@ const DesktopHeader = ({ intl }) => {
   const handleSubmitSearch = (value) => {
     // dispatch(resetSearchFilters());
     // dispatch(setSearchString(value));
-    history.push('/search');
+    history.push(`/homepage/search?q=${value}`);
+
   };
 
   return (
