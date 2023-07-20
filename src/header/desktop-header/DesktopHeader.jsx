@@ -1,5 +1,5 @@
 import { Button, SearchField } from '@edx/paragon';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AppContext } from '@edx/frontend-platform/react';
 import { getConfig } from '@edx/frontend-platform';
@@ -22,7 +22,7 @@ import messages from '../../generic/messages';
 import useLogo from '../../hooks/useLogo';
 
 const DesktopHeader = ({ intl }) => {
-  const history = useHistory();
+  // const history = useHistory();
   const { authenticatedUser } = useContext(AppContext);
   const logo = useLogo();
   // const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const DesktopHeader = ({ intl }) => {
   const handleSubmitSearch = (value) => {
     // dispatch(resetSearchFilters());
     // dispatch(setSearchString(value));
-    history.replace(`/homepage/search?q=${value}`);
+    window.location.replace(`/homepage/search?q=${value}`);
 
   };
 
