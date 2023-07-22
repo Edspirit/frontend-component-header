@@ -42,6 +42,9 @@
     &:focus {
       box-shadow: unset;
     }
+    .btn {
+      color: $gray-500;
+    }
   }
   .pgn__icon {
     color: $gray-500;
@@ -91,7 +94,7 @@
       font-weight: 400;
     }
     .second-title-wrapper {
-      font-size: 0.875rem;;
+      font-size: 0.875rem;
       color: $gray-500;
     }
   }

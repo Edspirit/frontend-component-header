@@ -1,16 +1,25 @@
-import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
+import { FormattedMessage, injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { FullscreenModal, Icon, SearchField } from '@edx/paragon';
 import React, { useMemo, useState } from 'react';
-import { ArrowBack } from '@edx/paragon/icons';
+import { ArrowBack, Close } from '@edx/paragon/icons';
 import messages from '../generic/messages';
 import useSearchSuggestions from './useSearchSuggestions';
+import { useDispatch, useSelector } from 'react-redux';
+import { addPage, clearAllPages, loadPages, removePage } from './redux/slice/recentPagesSlice';
+import logoPlaceholder from '../assets/org-logo-place-holder.svg';
+
 
 const SearchModal = ({ intl, openModal, setOpenModal }) => {
+  const dispatch = useDispatch();
   const [searchSuggestionValue, setSearchSuggestionValue] = useState('');
-  console.log('searchSuggestionValue', searchSuggestionValue);
   const { searchSuggestionsResults } = useSearchSuggestions(
     searchSuggestionValue
   );
+  const recentSearch = useSelector((state) => state.recentPages.pages);
+
+  useEffect(() => {
+    dispatch(loadPages());
+  }, [dispatch]);
 
   const handleSubmitSearch = (value) => {
     setOpenModal(false);
@@ -54,6 +63,8 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
               href={`/homepage/course/${result?.data?.course_metadata?.course_slug}`}
               onMouseDown={() => {
                 setSearchSuggestionValue('');
+                dispatch(addPage(result?.data?.course_metadata));
+                setOpenModal(false);
                 window.location.replace(
                   `/homepage/course/${result?.data?.course_metadata?.course_slug}`
                 );
@@ -74,7 +85,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
           ))}
         </div>
       )}
-      {/* {recentSearch.length > 0 && (
+      {recentSearch?.length > 0 && (
         <div className="px-4 pt-4 recent-view-wrapper">
           <div className="d-flex justify-content-between align-items-center mb-4">
             <h4>
@@ -87,7 +98,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
               <FormattedMessage id="clearAll.text" defaultMessage="Clear all" />
             </span>
           </div>
-          {recentSearch.map((recentView) => (
+          {recentSearch?.map((recentView) => (
             <div
               className="d-flex align-items-center mb-2.5"
               key={recentView?.paid_course?.course_id}
@@ -118,7 +129,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
             </div>
           ))}
         </div>
-      )} */}
+      )}
       {/* TODO: Need Backend Data */}
       {/* <TrendingWords />
       <TrendingCourses /> */}

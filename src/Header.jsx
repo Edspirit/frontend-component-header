@@ -1,11 +1,12 @@
 import { useMediaQuery } from '@edx/paragon';
 import React, { useState } from 'react';
+import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
 import DesktopHeader from './Header/DesktopHeader';
 import MobileHeader from './Header/MobileHeader';
-import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import SearchModal from './Header/SearchModal';
-import { QueryClient, QueryClientProvider } from 'react-query';
-
+import store from './Header/redux/store/store';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,14 +20,20 @@ const queryClient = new QueryClient({
 });
 const Header = () => {
   const isMobile = useMediaQuery({ maxWidth: '768px' });
-  const [openModal,setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   return (
-    <QueryClientProvider client={queryClient}>
-      <header>
-        <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
-        {isMobile ? <MobileHeader setOpenModal={setOpenModal} /> : <DesktopHeader />}
-      </header>
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <header>
+          <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
+          {isMobile ? (
+            <MobileHeader setOpenModal={setOpenModal} />
+          ) : (
+            <DesktopHeader />
+          )}
+        </header>
+      </QueryClientProvider>
+    </Provider>
   );
 };
 
