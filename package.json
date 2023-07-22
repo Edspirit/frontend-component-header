@@ -58,6 +58,7 @@
     "@testing-library/react": "10.4.9"
   },
   "dependencies": {
+    "react-query": "^3.39.3",
     "babel-polyfill": "6.26.0",
     "react-responsive": "8.2.0",
     "react-transition-group": "4.4.2",
