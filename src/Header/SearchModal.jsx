@@ -42,7 +42,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
           )}
         />
       </div>
-      {searchSuggestionsResults?.length > 0 && (
+      {/* {searchSuggestionsResults?.length > 0 && (
         <div className="search-result-modal-wrapper px-4 pt-3">
           {searchSuggestionsResults?.map((result) => (
             <a
@@ -69,7 +69,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
             </a>
           ))}
         </div>
-      )}
+      )} */}
       {/* {recentSearch.length > 0 && (
         <div className="px-4 pt-4 recent-view-wrapper">
           <div className="d-flex justify-content-between align-items-center mb-4">
