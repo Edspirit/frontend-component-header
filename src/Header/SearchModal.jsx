@@ -6,7 +6,8 @@ import messages from '../generic/messages';
 import useSearchSuggestions from './useSearchSuggestions';
 
 const SearchModal = ({ intl, openModal, setOpenModal }) => {
-  // const [searchSuggestionValue, setSearchSuggestionValue] = useState('');
+  const [searchSuggestionValue, setSearchSuggestionValue] = useState('');
+  console.log('searchSuggestionValue',searchSuggestionValue)
   // const { searchSuggestionsResults } = useSearchSuggestions(
   //   searchSuggestionValue
   // );
@@ -33,9 +34,9 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
           className="mr-1.5"
         />
         <SearchField
-          // onChange={(value) => {
-          //   setSearchSuggestionValue(value);
-          // }}
+          onChange={(value) => {
+            setSearchSuggestionValue(value);
+          }}
           onSubmit={handleSubmitSearch}
           placeholder={intl.formatMessage(
             messages['header.search.placeholder']
