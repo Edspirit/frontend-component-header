@@ -1,58 +1,17 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { FullscreenModal, Icon, SearchField } from '@edx/paragon';
 import React, { useState } from 'react';
-
-// import { useDispatch, useSelector } from 'react-redux';
-// import { ArrowBack, Close } from '@edx/paragon/icons';
 import { ArrowBack } from '@edx/paragon/icons';
 import messages from '../generic/messages';
 import useSearchSuggestions from './useSearchSuggestions';
-// import { useHistory, useLocation } from 'react-router';
-// import { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
-// import { setSearchModal } from '../../../../redux/slice/searchModalSlice';
-// import {
-//   resetSearchFilters,
-//   setSearchString,
-// } from '../../../../redux/slice/searchQuerySlice';
-// import useSearchSuggestions from '../../../../hooks/useSearchSuggestions';
-// import {
-//   addPage,
-//   clearAllPages,
-//   loadPages,
-//   removePage,
-// } from '../../../../redux/slice/recentPagesSlice';
-// import logoPlaceholder from '../../../../assets/place-holders/org-place-holder.svg';
 
 const SearchModal = ({ intl, openModal, setOpenModal }) => {
-  // const dispatch = useDispatch();
-  // const location = useLocation();
-  // const isOpenSearchModal = useSelector((state) => state.searchModal.open);
-  const [searchSuggestionValue, setSearchSuggestionValue] = useState('');
-  const { searchSuggestionsResults } = useSearchSuggestions(
-    searchSuggestionValue
-  );
-  // const recentSearch = useSelector((state) => state.recentPages.pages);
-  // const history = useHistory();
-
-  // useEffect(() => {
-  //   const searchParams = new URLSearchParams(location.search);
-  //   const query = searchParams.get('q');
-  //   dispatch(setSearchString(query || ''));
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [location]);
-
-  // useEffect(() => {
-  //   dispatch(loadPages());
-  // }, [dispatch]);
+  // const [searchSuggestionValue, setSearchSuggestionValue] = useState('');
+  // const { searchSuggestionsResults } = useSearchSuggestions(
+  //   searchSuggestionValue
+  // );
 
   const handleSubmitSearch = (value) => {
-    // dispatch(resetSearchFilters());
-    // dispatch(setSearchString(searchSuggestionValue));
-    // dispatch(setSearchModal(false));
-    // setSearchSuggestionValue('');
     setOpenModal(false);
     window.location.replace(`/homepage/search?q=${value}`);
   };
@@ -69,16 +28,14 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
           src={ArrowBack}
           loadPages
           onClick={() => {
-            // setSearchSuggestionValue('');
-            // dispatch(setSearchModal(false));
             setOpenModal(false);
           }}
           className="mr-1.5"
         />
         <SearchField
-          onChange={(value) => {
-            setSearchSuggestionValue(value);
-          }}
+          // onChange={(value) => {
+          //   setSearchSuggestionValue(value);
+          // }}
           onSubmit={handleSubmitSearch}
           placeholder={intl.formatMessage(
             messages['header.search.placeholder']
@@ -93,8 +50,6 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
               href={`/homepage/course/${result?.data?.course_metadata?.course_slug}`}
               onMouseDown={() => {
                 setSearchSuggestionValue('');
-                // dispatch(addPage(result?.data?.course_metadata));
-                // dispatch(setSearchModal(false));
                 window.location.replace(
                   `/homepage/course/${result?.data?.course_metadata?.course_slug}`
                 );
