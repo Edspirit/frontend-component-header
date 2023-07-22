@@ -52,7 +52,7 @@ const SearchModal = ({ intl, isOpen, close }) => {
     // dispatch(setSearchString(searchSuggestionValue));
     // dispatch(setSearchModal(false));
     // setSearchSuggestionValue('');
-    close();
+    // close();
     window.location.replace(`/homepage/search?q=${value}`);
   };
 
@@ -61,10 +61,7 @@ const SearchModal = ({ intl, isOpen, close }) => {
       className="search-modal"
       title="search-modal"
       isOpen={isOpen}
-      onClose={() => {
-        // setSearchSuggestionValue('');
-        // dispatch(setSearchModal(false));
-      }}
+      onClose={close}
     >
       <div className="d-flex align-items-center search-wrapper">
         <Icon
@@ -73,7 +70,7 @@ const SearchModal = ({ intl, isOpen, close }) => {
           onClick={() => {
             // setSearchSuggestionValue('');
             // dispatch(setSearchModal(false));
-            close();
+            // close();
           }}
           className="mr-1.5"
         />
