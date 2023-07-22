@@ -7,16 +7,27 @@ import useSearchSuggestions from './useSearchSuggestions';
 
 const SearchModal = ({ intl, openModal, setOpenModal }) => {
   const [searchSuggestionValue, setSearchSuggestionValue] = useState('');
-  console.log('searchSuggestionValue',searchSuggestionValue)
-  // const { searchSuggestionsResults } = useSearchSuggestions(
-  //   searchSuggestionValue
-  // );
+  console.log('searchSuggestionValue', searchSuggestionValue);
+  const { searchSuggestionsResults } = useSearchSuggestions(
+    searchSuggestionValue
+  );
 
   const handleSubmitSearch = (value) => {
     setOpenModal(false);
     window.location.replace(`/homepage/search?q=${value}`);
   };
-
+  const searchField = useMemo(
+    () => (
+      <SearchField
+        onChange={(value) => {
+          setSearchSuggestionValue(value);
+        }}
+        onSubmit={handleSubmitSearch}
+        placeholder={intl.formatMessage(messages['header.search.placeholder'])}
+      />
+    ),
+    [intl]
+  );
   return (
     <FullscreenModal
       className="search-modal"
@@ -33,17 +44,9 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
           }}
           className="mr-1.5"
         />
-        <SearchField
-          onChange={(value) => {
-            setSearchSuggestionValue(value);
-          }}
-          onSubmit={handleSubmitSearch}
-          placeholder={intl.formatMessage(
-            messages['header.search.placeholder']
-          )}
-        />
+        {searchField}
       </div>
-      {/* {searchSuggestionsResults?.length > 0 && (
+      {searchSuggestionsResults?.length > 0 && (
         <div className="search-result-modal-wrapper px-4 pt-3">
           {searchSuggestionsResults?.map((result) => (
             <a
@@ -70,7 +73,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
             </a>
           ))}
         </div>
-      )} */}
+      )}
       {/* {recentSearch.length > 0 && (
         <div className="px-4 pt-4 recent-view-wrapper">
           <div className="d-flex justify-content-between align-items-center mb-4">
