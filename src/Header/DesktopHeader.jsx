@@ -1,6 +1,6 @@
-import { Button, SearchField } from '@edx/paragon';
+import { Button, SearchField, Skeleton } from '@edx/paragon';
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '@edx/frontend-platform/react';
 import { getConfig } from '@edx/frontend-platform';
 import {
@@ -8,39 +8,32 @@ import {
   injectIntl,
   intlShape,
 } from '@edx/frontend-platform/i18n';
-// import { useDispatch } from 'react-redux';
 import NavHeader from './NavHeader/NavHeader';
 import DefaultLogo from '../assets/NavLogo-placeholder.svg';
 import handleRedirect from './handleRedirect';
-import React from 'react';
-// import {
-//   resetSearchFilters,
-//   setSearchString,
-// } from '../../../../redux/slice/searchQuerySlice';
 import ProfileDropdown from './DesktopHeader/ProfileDropdown';
 import messages from '../generic/messages';
-import useLogo from '../hooks/useLogo';
+import useGetConfig from './useGetConfig';
 
 const DesktopHeader = ({ intl }) => {
-  // const history = useHistory();
   const { authenticatedUser } = useContext(AppContext);
-  const logo = useLogo();
-  // const dispatch = useDispatch();
+  const { headerLogo, loading } = useGetConfig();
 
   const handleSubmitSearch = (value) => {
-    // dispatch(resetSearchFilters());
-    // dispatch(setSearchString(value));
     window.location.replace(`/homepage/search?q=${value}`);
-
   };
 
   return (
     <div className="d-flex flex-row justify-content-between align-items-center header-wrapper">
       <div className="left-side-container">
         <div className="logo-container mr-4">
-          <Link to="/">
-            <img src={logo ?? DefaultLogo} alt="edspirit-logo" />
-          </Link>
+          {loading ? (
+            <Skeleton height={32} width={112} className="mb-1" />
+          ) : (
+            <a href="/homepage">
+              <img src={headerLogo ?? DefaultLogo} alt="edspirit-logo" />
+            </a>
+          )}
         </div>
         <NavHeader />
       </div>

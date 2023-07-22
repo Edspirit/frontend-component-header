@@ -8,6 +8,7 @@ import React from 'react';
 // import { ArrowBack, Close } from '@edx/paragon/icons';
 import { ArrowBack } from '@edx/paragon/icons';
 import messages from '../generic/messages';
+import useSearchSuggestions from './useSearchSuggestions';
 // import { useHistory, useLocation } from 'react-router';
 // import { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
@@ -29,10 +30,10 @@ const SearchModal = ({ intl, isOpen, close }) => {
   // const dispatch = useDispatch();
   // const location = useLocation();
   // const isOpenSearchModal = useSelector((state) => state.searchModal.open);
-  // const [searchSuggestionValue, setSearchSuggestionValue] = useState('');
-  // const { searchSuggestionsResults } = useSearchSuggestions(
-  //   searchSuggestionValue,
-  // );
+  const [searchSuggestionValue, setSearchSuggestionValue] = useState('');
+  const { searchSuggestionsResults } = useSearchSuggestions(
+    searchSuggestionValue
+  );
   // const recentSearch = useSelector((state) => state.recentPages.pages);
   // const history = useHistory();
 
@@ -84,18 +85,18 @@ const SearchModal = ({ intl, isOpen, close }) => {
           )}
         />
       </div>
-      {/* {searchSuggestionsResults?.length > 0 && (
+      {searchSuggestionsResults?.length > 0 && (
         <div className="search-result-modal-wrapper px-4 pt-3">
           {searchSuggestionsResults?.map((result) => (
-            <Link
+            <a
               key={result?.data?.id}
-              to={`/course/${result?.data?.course_metadata?.course_slug}`}
+              href={`/homepage/course/${result?.data?.course_metadata?.course_slug}`}
               onMouseDown={() => {
                 setSearchSuggestionValue('');
-                dispatch(addPage(result?.data?.course_metadata));
-                dispatch(setSearchModal(false));
-                history.push(
-                  `/course/${result?.data?.course_metadata?.course_slug}`,
+                // dispatch(addPage(result?.data?.course_metadata));
+                // dispatch(setSearchModal(false));
+                window.location.replace(
+                  `/homepage/course/${result?.data?.course_metadata?.course_slug}`
                 );
               }}
             >
@@ -110,10 +111,10 @@ const SearchModal = ({ intl, isOpen, close }) => {
                   . <span>{result.isProgram ? 'Program' : 'Course'}</span>
                 </p>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
-      )} */}
+      )}
       {/* {recentSearch.length > 0 && (
         <div className="px-4 pt-4 recent-view-wrapper">
           <div className="d-flex justify-content-between align-items-center mb-4">

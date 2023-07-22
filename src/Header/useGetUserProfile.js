@@ -6,7 +6,6 @@ import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
 
 const useGetUserProfile = () => {
   const { authenticatedUser } = useContext(AppContext);
-  console.log('test-react-query');
   const fetchUserProfile = async () => {
     const { data, status } = await getAuthenticatedHttpClient().get(
       `${getConfig().LMS_BASE_URL}/api/user/v1/accounts/${
