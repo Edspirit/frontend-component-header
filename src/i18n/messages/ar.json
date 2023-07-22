@@ -40,5 +40,7 @@
   "header.dropdownOption.signOut": "تسجيل خروج",
   "header.signIn": "تسجيل الدخول",
   "header.register": "انشاء حساب جديد",
-  "header.dropdownOption.orderHistory": "سجل الطلبات"
+  "header.dropdownOption.orderHistory": "سجل الطلبات",
+  "searchModal.recentlyViewed.text": "الزيارة الأخيرة",
+  "clearAll.text": "مسح كل شيء"
 }

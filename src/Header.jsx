@@ -1,6 +1,5 @@
 import { useMediaQuery } from '@edx/paragon';
 import React, { useState } from 'react';
-import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import DesktopHeader from './Header/DesktopHeader';
@@ -37,8 +36,4 @@ const Header = () => {
   );
 };
 
-Header.propTypes = {
-  intl: intlShape.isRequired,
-};
-
-export default injectIntl(Header);
+export default Header;

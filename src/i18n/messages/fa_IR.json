@@ -43,5 +43,7 @@
   "header.nav.inProgress": "در حال پیشرفت",
   "header.nav.overview": "نگاه‌کلی",
   "header.search.placeholder": "مایل به دریافت چه آموزشی هستید؟",
-  "header.nav.completed": "تکمیل شده"
+  "header.nav.completed": "تکمیل شده",
+  "searchModal.recentlyViewed.text": "بازدید اخیر",
+  "clearAll.text": "پاک کردن"
 }
