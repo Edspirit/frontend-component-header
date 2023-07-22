@@ -5,19 +5,19 @@ import { Search } from '@edx/paragon/icons';
 import { NavLink, useLocation } from 'react-router-dom';
 // import { useDispatch } from 'react-redux';
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
-import DefaultLogo from '../../assets/NavLogo-placeholder.svg';
-import { ReactComponent as HomeNav } from '../../assets/nav-icons/home-nav.svg';
-import { ReactComponent as HomeNavColored } from '../..//assets/nav-icons/home-nav-colored.svg';
-import { ReactComponent as DashboardNav } from '../../assets/nav-icons/dashboard-nav.svg';
-import { ReactComponent as DashboardNavColored } from '../../assets/nav-icons/dashboard-nav-colored.svg';
-import { ReactComponent as DiscoverNav } from '../../assets/nav-icons/discover-nav.svg';
-import { ReactComponent as DiscoverdNavColored } from '../../assets/nav-icons/discover-nav-colored.svg';
-import { ReactComponent as ProfileNav } from '../../assets/nav-icons/profile-nav.svg';
-import { ReactComponent as ProfileNavColored } from '../../assets/nav-icons/profile-nav-colored.svg';
+import DefaultLogo from '../assets/NavLogo-placeholder.svg';
+import { ReactComponent as HomeNav } from '../assets/nav-icons/home-nav.svg';
+import { ReactComponent as HomeNavColored } from '../assets/nav-icons/home-nav-colored.svg';
+import { ReactComponent as DashboardNav } from '../assets/nav-icons/dashboard-nav.svg';
+import { ReactComponent as DashboardNavColored } from '../assets/nav-icons/dashboard-nav-colored.svg';
+import { ReactComponent as DiscoverNav } from '../assets/nav-icons/discover-nav.svg';
+import { ReactComponent as DiscoverdNavColored } from '../assets/nav-icons/discover-nav-colored.svg';
+import { ReactComponent as ProfileNav } from '../assets/nav-icons/profile-nav.svg';
+import { ReactComponent as ProfileNavColored } from '../assets/nav-icons/profile-nav-colored.svg';
 // import { setSearchModal } from '../../../../redux/slice/searchModalSlice';
-import useLogo from '../../hooks/useLogo';
+import useLogo from '../hooks/useLogo';
 
-const MobileHeader = () => {
+const MobileHeader = ({open}) => {
   const { authenticatedUser } = useContext(AppContext);
   const logo = useLogo();
   const [ActiveLink, setActiveLink] = useState(null);
@@ -40,6 +40,7 @@ const MobileHeader = () => {
           src={Search}
           iconAs={Icon}
           alt="Search"
+          onClick={open}
           // onClick={() => dispatch(setSearchModal(true))}
         />
       </div>

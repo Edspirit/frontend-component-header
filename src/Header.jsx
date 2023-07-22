@@ -1,16 +1,19 @@
-import { useMediaQuery } from '@edx/paragon';
+import { useMediaQuery, useToggle } from '@edx/paragon';
 import React from 'react';
-import DesktopHeader from './header/desktop-header/DesktopHeader';
-import MobileHeader from './header/mobile-header/MobileHeader';
-import {
-  injectIntl,
-  intlShape,
-} from '@edx/frontend-platform/i18n';
+import DesktopHeader from './Header/DesktopHeader';
+import MobileHeader from './Header/MobileHeader';
+import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
+import SearchModal from './Header/SearchModal';
 
 const Header = () => {
   const isMobile = useMediaQuery({ maxWidth: '768px' });
-
-  return <header>{isMobile ? <MobileHeader /> : <DesktopHeader />}</header>;
+  const [isOpen, open, close] = useToggle(false);
+  return (
+    <header>
+      <SearchModal isOpen={isOpen} onClose={close} />
+      {isMobile ? <MobileHeader open={open} /> : <DesktopHeader />}
+    </header>
+  );
 };
 
 Header.propTypes = {

@@ -9,17 +9,17 @@ import {
   intlShape,
 } from '@edx/frontend-platform/i18n';
 // import { useDispatch } from 'react-redux';
-import NavHeader from '../nav-header/NavHeader';
-import DefaultLogo from '../../assets/NavLogo-placeholder.svg';
-import handleRedirect from '../handleRedirect';
+import NavHeader from './nav-header/NavHeader';
+import DefaultLogo from '../assets/NavLogo-placeholder.svg';
+import handleRedirect from './handleRedirect';
 import React from 'react';
 // import {
 //   resetSearchFilters,
 //   setSearchString,
 // } from '../../../../redux/slice/searchQuerySlice';
-import ProfileDropdown from './ProfileDropdown';
-import messages from '../../generic/messages';
-import useLogo from '../../hooks/useLogo';
+import ProfileDropdown from './desktop-header/ProfileDropdown';
+import messages from '../generic/messages';
+import useLogo from '../hooks/useLogo';
 
 const DesktopHeader = ({ intl }) => {
   // const history = useHistory();
