@@ -2,6 +2,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { FullscreenModal, Icon, SearchField } from '@edx/paragon';
+import React from 'react';
+
 // import { useDispatch, useSelector } from 'react-redux';
 // import { ArrowBack, Close } from '@edx/paragon/icons';
 import { ArrowBack } from '@edx/paragon/icons';
