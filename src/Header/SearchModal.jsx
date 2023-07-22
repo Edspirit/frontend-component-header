@@ -76,9 +76,9 @@ const SearchModal = ({ intl, isOpen, close }) => {
           className="mr-1.5"
         />
         <SearchField
-          // onChange={(value) => {
-          //   setSearchSuggestionValue(value);
-          // }}
+          onChange={(value) => {
+            setSearchSuggestionValue(value);
+          }}
           onSubmit={handleSubmitSearch}
           placeholder={intl.formatMessage(
             messages['header.search.placeholder']
