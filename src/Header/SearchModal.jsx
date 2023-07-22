@@ -5,10 +5,10 @@ import { FullscreenModal, Icon, SearchField } from '@edx/paragon';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { ArrowBack, Close } from '@edx/paragon/icons';
 import { ArrowBack } from '@edx/paragon/icons';
+import messages from '../generic/messages';
 // import { useHistory, useLocation } from 'react-router';
 // import { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
-import messages from '../../../../messages';
 // import { setSearchModal } from '../../../../redux/slice/searchModalSlice';
 // import {
 //   resetSearchFilters,
