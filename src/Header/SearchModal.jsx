@@ -1,6 +1,6 @@
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { FullscreenModal, Icon, SearchField } from '@edx/paragon';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ArrowBack } from '@edx/paragon/icons';
 import messages from '../generic/messages';
 import useSearchSuggestions from './useSearchSuggestions';
