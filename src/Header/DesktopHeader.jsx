@@ -9,7 +9,7 @@ import {
   intlShape,
 } from '@edx/frontend-platform/i18n';
 // import { useDispatch } from 'react-redux';
-import NavHeader from './nav-header/NavHeader';
+import NavHeader from './NavHeader/NavHeader';
 import DefaultLogo from '../assets/NavLogo-placeholder.svg';
 import handleRedirect from './handleRedirect';
 import React from 'react';
@@ -17,7 +17,7 @@ import React from 'react';
 //   resetSearchFilters,
 //   setSearchString,
 // } from '../../../../redux/slice/searchQuerySlice';
-import ProfileDropdown from './desktop-header/ProfileDropdown';
+import ProfileDropdown from './DesktopHeader/ProfileDropdown';
 import messages from '../generic/messages';
 import useLogo from '../hooks/useLogo';
 
