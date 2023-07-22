@@ -1,5 +1,6 @@
 import { getConfig } from '@edx/frontend-platform';
 import { useQuery } from 'react-query';
+import logoPlaceholder from '../assets/org-logo-place-holder.svg';
 
 const useGetConfig = () => {
   const fetchConfig = async ({ baseURL, instanceConfigAPIUrl }) => {
@@ -10,18 +11,19 @@ const useGetConfig = () => {
 
   const { data, isLoading, isError } = useQuery(
     'headerLogo',
-    () => fetchConfig({
-      baseURL: getConfig().LMS_BASE_URL,
-      instanceConfigAPIUrl: getConfig().AC_INSTANCE_CONFIG_API_URL,
-    }),
+    () =>
+      fetchConfig({
+        baseURL: getConfig().LMS_BASE_URL,
+        instanceConfigAPIUrl: getConfig().AC_INSTANCE_CONFIG_API_URL,
+      }),
     {
       enabled:
         !!getConfig().LMS_BASE_URL && !!getConfig().AC_INSTANCE_CONFIG_API_URL,
-    },
+    }
   );
 
   return {
-    headerLogo: data,
+    headerLogo: data || logoPlaceholder,
     loading: isLoading,
     isError,
   };

@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-import {
-  Icon, IconButton, Nav, Skeleton,
-} from '@edx/paragon';
+import { Icon, IconButton, Nav } from '@edx/paragon';
 import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '@edx/frontend-platform/react';
 import { Search } from '@edx/paragon/icons';
@@ -20,7 +18,7 @@ import useGetConfig from './useGetConfig';
 
 const MobileHeader = ({ open }) => {
   const { authenticatedUser } = useContext(AppContext);
-  const { headerLogo, loading } = useGetConfig();
+  const { headerLogo } = useGetConfig();
 
   const [ActiveLink, setActiveLink] = useState(null);
   const location = useLocation();
@@ -32,13 +30,9 @@ const MobileHeader = ({ open }) => {
       <div className="hidden-top-mobile-header" />
       <div className="py-1.5 px-4 mobile-header">
         <div className="logo-container mr-4">
-          {loading ? (
-            <Skeleton height={32} width={112} className="mb-1" />
-          ) : (
-            <a href="/homepage">
-              <img src={headerLogo ?? DefaultLogo} alt="edspirit-logo" />
-            </a>
-          )}
+          <a href="/homepage">
+            <img src={headerLogo ?? DefaultLogo} alt="edspirit-logo" />
+          </a>
         </div>
         <IconButton
           className="mobile-search"
