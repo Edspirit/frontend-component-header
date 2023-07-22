@@ -26,7 +26,7 @@ import useSearchSuggestions from './useSearchSuggestions';
 // } from '../../../../redux/slice/recentPagesSlice';
 // import logoPlaceholder from '../../../../assets/place-holders/org-place-holder.svg';
 
-const SearchModal = ({ intl, isOpen, close }) => {
+const SearchModal = ({ intl, openModal, setOpenModal }) => {
   // const dispatch = useDispatch();
   // const location = useLocation();
   // const isOpenSearchModal = useSelector((state) => state.searchModal.open);
@@ -53,7 +53,7 @@ const SearchModal = ({ intl, isOpen, close }) => {
     // dispatch(setSearchString(searchSuggestionValue));
     // dispatch(setSearchModal(false));
     // setSearchSuggestionValue('');
-    // close();
+    setOpenModal(false);
     window.location.replace(`/homepage/search?q=${value}`);
   };
 
@@ -61,8 +61,8 @@ const SearchModal = ({ intl, isOpen, close }) => {
     <FullscreenModal
       className="search-modal"
       title="search-modal"
-      isOpen={isOpen}
-      onClose={close}
+      isOpen={openModal}
+      onClose={() => setOpenModal(false)}
     >
       <div className="d-flex align-items-center search-wrapper">
         <Icon
@@ -71,7 +71,7 @@ const SearchModal = ({ intl, isOpen, close }) => {
           onClick={() => {
             // setSearchSuggestionValue('');
             // dispatch(setSearchModal(false));
-            // close();
+            setOpenModal(false);
           }}
           className="mr-1.5"
         />

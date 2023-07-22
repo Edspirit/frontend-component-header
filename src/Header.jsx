@@ -1,5 +1,5 @@
-import { useMediaQuery, useToggle } from '@edx/paragon';
-import React from 'react';
+import { useMediaQuery } from '@edx/paragon';
+import React, { useState } from 'react';
 import DesktopHeader from './Header/DesktopHeader';
 import MobileHeader from './Header/MobileHeader';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
@@ -19,12 +19,12 @@ const queryClient = new QueryClient({
 });
 const Header = () => {
   const isMobile = useMediaQuery({ maxWidth: '768px' });
-  const [isOpen, open, close] = useToggle(false);
+  const [openModal,setOpenModal] = useState(false);
   return (
     <QueryClientProvider client={queryClient}>
       <header>
-        <SearchModal isOpen={isOpen} onClose={close} />
-        {isMobile ? <MobileHeader open={open} /> : <DesktopHeader />}
+        <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
+        {isMobile ? <MobileHeader setOpenModal={setOpenModal} /> : <DesktopHeader />}
       </header>
     </QueryClientProvider>
   );

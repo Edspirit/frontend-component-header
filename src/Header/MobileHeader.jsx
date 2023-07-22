@@ -16,7 +16,7 @@ import { ReactComponent as ProfileNav } from '../assets/nav-icons/profile-nav.sv
 import { ReactComponent as ProfileNavColored } from '../assets/nav-icons/profile-nav-colored.svg';
 import useGetConfig from './useGetConfig';
 
-const MobileHeader = ({ open }) => {
+const MobileHeader = ({ setOpenModal }) => {
   const { authenticatedUser } = useContext(AppContext);
   const { headerLogo } = useGetConfig();
 
@@ -39,7 +39,7 @@ const MobileHeader = ({ open }) => {
           src={Search}
           iconAs={Icon}
           alt="Search"
-          onClick={open}
+          onClick={() => setOpenModal(true)}
         />
       </div>
       <Nav
