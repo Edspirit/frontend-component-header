@@ -35,5 +35,7 @@
   "notification.earlier.heading": "Earlier",
   "notification.mark.as.read": "Mark all as read",
   "notification.fullStop": "•",
-  "notification.load.more.notifications": "Load more notifications"
+  "notification.load.more.notifications": "Load more notifications",
+  "searchModal.recentlyViewed.text": "الزيارة الأخيرة",
+  "clearAll.text": "مسح كل شيء"
 }

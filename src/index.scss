@@ -5,7 +5,11 @@ $white: #fff;
 @import "@edx/brand/paragon/variables.scss";
 @import "@edx/paragon/scss/core/core.scss";
 @import "@edx/brand/paragon/overrides.scss";
-@import './Menu/menu.scss';
+@import "./Menu/menu.scss";
+
+@import "./Header/header.scss";
+@import "./Header/NavHeader/nav-header.scss";
+@import "./Header/SearchModal/search-modal.scss";
 
 .dropdown-item a {
   text-decoration: none;
@@ -20,11 +24,12 @@ $white: #fff;
   border: none;
   height: 3rem;
   width: 3rem;
-  padding: .75rem;
+  padding: 0.75rem;
   justify-content: center;
-  align-items:center;
-  &:hover, &:focus {
-    background: rgba(0,0,0,.1);
+  align-items: center;
+  &:hover,
+  &:focus {
+    background: rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -70,9 +75,8 @@ $white: #fff;
   }
 }
 
-
 .site-header-desktop {
-  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
   background: $white;
   .nav-link {
     text-decoration: none;
@@ -81,7 +85,7 @@ $white: #fff;
     display: block;
     box-sizing: content-box;
     position: relative;
-    top: -.05em;
+    top: -0.05em;
     height: 1.75rem;
     padding: 1rem 0;
     margin-right: 1rem;
@@ -95,7 +99,7 @@ $white: #fff;
       padding: 1.125rem 1rem;
       text-decoration: none;
       font-weight: 500;
-      letter-spacing: .01em;
+      letter-spacing: 0.01em;
     }
     .nav-link:hover,
     .nav-link:focus,
@@ -110,7 +114,7 @@ $white: #fff;
         border-top: solid 2px $component-active-bg;
         left: 0;
         right: 0;
-        box-shadow: 0 1px 2px rgba(0,0,0,.25);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
         padding: 1rem;
@@ -124,7 +128,7 @@ $white: #fff;
 
 .content {
   strong {
-    color: #00262B !important;
+    color: #00262b !important;
     font-weight: 500 !important;
   }
 }
@@ -176,7 +180,7 @@ $white: #fff;
   height: 36px;
 }
 
-.notification-icon{
+.notification-icon {
   height: 23.33px !important;
   width: 23.33px !important;
 }
@@ -185,7 +189,7 @@ $white: #fff;
   position: absolute;
   margin-top: 18px;
   margin-left: -21px;
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   font-size: 9px !important;
 }
 
@@ -243,7 +247,7 @@ $white: #fff;
       }
 
       b {
-        color: #00262B;
+        color: #00262b;
       }
     }
 
