@@ -112,7 +112,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
               key={recentView?.paid_course?.course_id}
             >
               <a
-                href={`/homepage/course/${recentView?.data?.course_metadata?.course_slug}`}
+                href={`/homepage/course/${recentView?.course_slug}`}
                 className="logo-img-wrapper "
               >
                 <img
@@ -125,7 +125,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
 
               <div className="d-flex justify-content-between align-items-center w-100">
                 <a
-                  href={`/homepage/course/${recentView?.data?.course_metadata?.course_slug}`}
+                  href={`/homepage/course/${recentView?.course_slug}`}
                 >
                   <p className="recent-title">
                     {recentView?.additional_metadata?.display_name}
