@@ -1,13 +1,21 @@
-import { FormattedMessage, injectIntl, intlShape } from '@edx/frontend-platform/i18n';
+import {
+  FormattedMessage,
+  injectIntl,
+  intlShape,
+} from '@edx/frontend-platform/i18n';
 import { FullscreenModal, Icon, SearchField } from '@edx/paragon';
 import React, { useEffect, useMemo, useState } from 'react';
 import { ArrowBack, Close } from '@edx/paragon/icons';
 import messages from '../generic/messages';
 import useSearchSuggestions from './useSearchSuggestions';
 import { useDispatch, useSelector } from 'react-redux';
-import { addPage, clearAllPages, loadPages, removePage } from './redux/slice/recentPagesSlice';
+import {
+  addPage,
+  clearAllPages,
+  loadPages,
+  removePage,
+} from './redux/slice/recentPagesSlice';
 import logoPlaceholder from '../assets/org-logo-place-holder.svg';
-
 
 const SearchModal = ({ intl, openModal, setOpenModal }) => {
   const dispatch = useDispatch();
@@ -103,24 +111,29 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
               className="d-flex align-items-center mb-2.5"
               key={recentView?.paid_course?.course_id}
             >
-              <div className="logo-img-wrapper ">
+              <a
+                href={`/homepage/course/${result?.data?.course_metadata?.course_slug}`}
+                className="logo-img-wrapper "
+              >
                 <img
                   src={
                     recentView?.partner?.organization?.logo ?? logoPlaceholder
                   }
                   alt="org-logo"
                 />
-              </div>
+              </a>
 
               <div className="d-flex justify-content-between align-items-center w-100">
-                <div>
+                <a
+                  href={`/homepage/course/${result?.data?.course_metadata?.course_slug}`}
+                >
                   <p className="recent-title">
                     {recentView?.additional_metadata?.display_name}
                   </p>
                   <p className="recent-institution">
                     {recentView?.partner?.organization?.name}
                   </p>
-                </div>
+                </a>
                 <Icon
                   src={Close}
                   onClick={() => dispatch(removePage(recentView?.course_slug))}
