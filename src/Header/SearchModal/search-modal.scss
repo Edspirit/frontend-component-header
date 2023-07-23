@@ -14,6 +14,9 @@
   }
 }
 .search-modal {
+  p {
+    margin-bottom: 0;
+  }
   h4 {
     color: $gray-500;
     opacity: 0.5;
