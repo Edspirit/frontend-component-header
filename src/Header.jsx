@@ -6,6 +6,7 @@ import DesktopHeader from "./Header/DesktopHeader";
 import MobileHeader from "./Header/MobileHeader";
 import SearchModal from "./Header/SearchModal";
 import store from "./Header/redux/store/store";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,14 +24,16 @@ const Header = () => {
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <header>
-          <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
-          {isMobile ? (
-            <MobileHeader setOpenModal={setOpenModal} />
-          ) : (
-            <DesktopHeader />
-          )}
-        </header>
+        <Router>
+          <header>
+            <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
+            {isMobile ? (
+              <MobileHeader setOpenModal={setOpenModal} />
+            ) : (
+              <DesktopHeader />
+            )}
+          </header>
+        </Router>
       </QueryClientProvider>
     </Provider>
   );
