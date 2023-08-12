@@ -1,6 +1,6 @@
 import { getConfig } from '@edx/frontend-platform';
 import { useQuery } from 'react-query';
-import logoPlaceholder from '../assets/org-logo-place-holder.svg';
+import logoPlaceholder from '../assets/NavLogo-placeholder.svg';
 
 const useGetConfig = () => {
   const fetchConfig = async ({ baseURL, instanceConfigAPIUrl }) => {
