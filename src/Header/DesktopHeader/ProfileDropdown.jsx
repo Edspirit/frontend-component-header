@@ -7,10 +7,12 @@ import { getConfig } from '@edx/frontend-platform';
 import { ReactComponent as Avatar } from '../../assets/header-avatar.svg';
 import { handleLogout } from '../handleRedirect';
 import useGetUserProfile from '../useGetUserProfile';
+import useGetConfig from '../useGetConfig';
 
 const ProfileDropdown = () => {
   const { authenticatedUser } = useContext(AppContext);
   const { userProfile, loading: userProfileLoading } = useGetUserProfile();
+  const { hasBilling } = useGetConfig();
 
   const renderAvatar = () => {
     if (userProfileLoading) {
@@ -71,6 +73,7 @@ const ProfileDropdown = () => {
             'https://',
             '',
           )}`}
+          disabled={!hasBilling}
         >
           <FormattedMessage
             id="header.dropdownOption.orderHistory"
