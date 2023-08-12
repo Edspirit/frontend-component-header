@@ -26,9 +26,9 @@ const DesktopHeader = ({ intl }) => {
     <div className="d-flex flex-row justify-content-between align-items-center header-wrapper">
       <div className="left-side-container">
         <div className="logo-container mr-4">
-            <a href="/homepage">
-              <img src={headerLogo ?? DefaultLogo} alt="edspirit-logo" />
-            </a>
+          <a href="/homepage">
+            <img src={headerLogo ?? DefaultLogo} alt="edspirit-logo" />
+          </a>
         </div>
         <NavHeader />
       </div>
@@ -36,7 +36,7 @@ const DesktopHeader = ({ intl }) => {
         <SearchField
           onSubmit={handleSubmitSearch}
           placeholder={intl.formatMessage(
-            messages['header.search.placeholder']
+            messages['header.search.placeholder'],
           )}
         />
         {/* <div className="d-flex align-items-center">
