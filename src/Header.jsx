@@ -1,12 +1,12 @@
-import { useMediaQuery } from "@edx/paragon";
-import React, { useState } from "react";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { Provider } from "react-redux";
-import DesktopHeader from "./Header/DesktopHeader";
-import MobileHeader from "./Header/MobileHeader";
-import SearchModal from "./Header/SearchModal";
-import store from "./Header/redux/store/store";
-import { BrowserRouter as Router } from "react-router-dom";
+import { useMediaQuery } from '@edx/paragon';
+import React, { useState } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import DesktopHeader from './Header/DesktopHeader';
+import MobileHeader from './Header/MobileHeader';
+import SearchModal from './Header/SearchModal';
+import store from './Header/redux/store/store';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,7 +19,7 @@ const queryClient = new QueryClient({
   },
 });
 const Header = () => {
-  const isMobile = useMediaQuery({ maxWidth: "768px" });
+  const isMobile = useMediaQuery({ maxWidth: '768px' });
   const [openModal, setOpenModal] = useState(false);
   return (
     <Provider store={store}>

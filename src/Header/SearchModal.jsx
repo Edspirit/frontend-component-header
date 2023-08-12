@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   FormattedMessage,
   injectIntl,
@@ -6,9 +7,9 @@ import {
 import { FullscreenModal, Icon, SearchField } from '@edx/paragon';
 import React, { useEffect, useMemo, useState } from 'react';
 import { ArrowBack, Close } from '@edx/paragon/icons';
+import { useDispatch, useSelector } from 'react-redux';
 import messages from '../generic/messages';
 import useSearchSuggestions from './useSearchSuggestions';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   addPage,
   clearAllPages,
@@ -21,7 +22,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
   const dispatch = useDispatch();
   const [searchSuggestionValue, setSearchSuggestionValue] = useState('');
   const { searchSuggestionsResults } = useSearchSuggestions(
-    searchSuggestionValue
+    searchSuggestionValue,
   );
   const recentSearch = useSelector((state) => state.recentPages.pages);
 
@@ -43,7 +44,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
         placeholder={intl.formatMessage(messages['header.search.placeholder'])}
       />
     ),
-    [intl]
+    [intl],
   );
   return (
     <FullscreenModal
@@ -74,7 +75,7 @@ const SearchModal = ({ intl, openModal, setOpenModal }) => {
                 dispatch(addPage(result?.data?.course_metadata));
                 setOpenModal(false);
                 window.location.replace(
-                  `/homepage/course/${result?.data?.course_metadata?.course_slug}`
+                  `/homepage/course/${result?.data?.course_metadata?.course_slug}`,
                 );
               }}
             >
