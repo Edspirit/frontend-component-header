@@ -42,6 +42,9 @@
   background-color: $light-300;
   padding-right: 30px;
   .avatar-dropdown-wrapper {
+    .disabled {
+      opacity: 0.5;
+    }
     .avatar-wrapper {
       width: 36px;
       height: 36px;
@@ -52,8 +55,8 @@
       }
     }
     .btn-primary {
-      background-color: $light-300;
-      border-color: $light-300;
+      background-color: $light-300 !important;
+      border-color: $light-300 !important;
       &:hover {
         border-color: $light-300 !important;
       }
