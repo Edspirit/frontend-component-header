@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Icon, IconButton, Nav } from '@edx/paragon';
-import React, { useContext, useEffect, useState } from 'react';
-import { AppContext } from '@edx/frontend-platform/react';
+import React, { useEffect, useState } from 'react';
 import { Search } from '@edx/paragon/icons';
 import { useLocation } from 'react-router-dom';
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
@@ -17,7 +16,6 @@ import { ReactComponent as ProfileNavColored } from '../assets/nav-icons/profile
 import useGetConfig from './useGetConfig';
 
 const MobileHeader = ({ setOpenModal }) => {
-  const { authenticatedUser } = useContext(AppContext);
   const { headerLogo } = useGetConfig();
 
   const [ActiveLink, setActiveLink] = useState(null);
@@ -93,14 +91,12 @@ const MobileHeader = ({ setOpenModal }) => {
         </Nav.Item>
         <Nav.Item>
           <a
-            className={
-              ActiveLink === `/u/${authenticatedUser?.username}` ? 'active' : ''
-            }
-            href={`/profile/u/${authenticatedUser?.username}`}
+            className={ActiveLink === '/homepage/profile' ? 'active' : ''}
+            href="/homepage/profile"
           >
             <Icon
               src={
-                ActiveLink === `/u/${authenticatedUser?.username}`
+                ActiveLink === '/homepage/profile'
                   ? ProfileNavColored
                   : ProfileNav
               }
