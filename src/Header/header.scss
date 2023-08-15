@@ -58,9 +58,6 @@
     .btn-primary.dropdown-toggle {
       background-color: unset;
       border-color: $light-300;
-      &:hover {
-        border-color: $primary-500;
-      }
       &:active {
         background-color: unset;
         border-color: $light-300;
