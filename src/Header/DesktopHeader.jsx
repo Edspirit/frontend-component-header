@@ -13,11 +13,12 @@ import handleRedirect from './handleRedirect';
 import ProfileDropdown from './DesktopHeader/ProfileDropdown';
 import messages from '../generic/messages';
 import useGetConfig from './useGetConfig';
+import useSetGtm from './useSetGtm';
 
 const DesktopHeader = ({ intl }) => {
   const { authenticatedUser } = useContext(AppContext);
-  const { headerLogo } = useGetConfig();
-
+  const { headerLogo, gtm } = useGetConfig();
+  useSetGtm(gtm);
   const handleSubmitSearch = (value) => {
     window.location.replace(`/homepage/search?q=${value}`);
   };
