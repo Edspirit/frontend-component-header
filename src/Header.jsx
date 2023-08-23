@@ -7,6 +7,8 @@ import DesktopHeader from './Header/DesktopHeader';
 import MobileHeader from './Header/MobileHeader';
 import SearchModal from './Header/SearchModal';
 import store from './Header/redux/store/store';
+import useGetConfig from './Header/useGetConfig';
+import useSetGtm from './Header/useSetGtm';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,6 +23,8 @@ const queryClient = new QueryClient({
 const Header = () => {
   const isMobile = useMediaQuery({ maxWidth: '768px' });
   const [openModal, setOpenModal] = useState(false);
+  const { gtm } = useGetConfig();
+  useSetGtm(gtm);
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>

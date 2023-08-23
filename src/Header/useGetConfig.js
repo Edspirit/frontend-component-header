@@ -24,6 +24,9 @@ const useGetConfig = () => {
   return {
     headerLogo: data?.logo || logoPlaceholder,
     hasBilling: data?.has_billing,
+    favicon: data?.favicon,
+    platformName: data?.platform_name,
+    gtm: data?.gtm,
     loading: isLoading,
     isError,
   };
