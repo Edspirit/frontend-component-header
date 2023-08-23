@@ -14,9 +14,11 @@ import { ReactComponent as DiscoverdNavColored } from '../assets/nav-icons/disco
 import { ReactComponent as ProfileNav } from '../assets/nav-icons/profile-nav.svg';
 import { ReactComponent as ProfileNavColored } from '../assets/nav-icons/profile-nav-colored.svg';
 import useGetConfig from './useGetConfig';
+import useSetGtm from './useSetGtm';
 
 const MobileHeader = ({ setOpenModal }) => {
-  const { headerLogo } = useGetConfig();
+  const { headerLogo, gtm } = useGetConfig();
+  useSetGtm(gtm);
 
   const [ActiveLink, setActiveLink] = useState(null);
   const location = useLocation();
