@@ -7,6 +7,7 @@ import DesktopHeader from './Header/DesktopHeader';
 import MobileHeader from './Header/MobileHeader';
 import SearchModal from './Header/SearchModal';
 import store from './Header/redux/store/store';
+import Head from './Header/Head';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,6 +28,7 @@ const Header = () => {
       <QueryClientProvider client={queryClient}>
         <Router>
           <header>
+            <Head />
             <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
             {isMobile ? (
               <MobileHeader setOpenModal={setOpenModal} />

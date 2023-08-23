@@ -74,7 +74,8 @@
     "react-router-dom": "5.3.4",
     "react-transition-group": "4.4.5",
     "rosie": "2.1.0",
-    "timeago.js": "4.0.2"
+    "timeago.js": "4.0.2",
+    "react-helmet": "6.1.0"
   },
   "peerDependencies": {
     "@edx/frontend-platform": "^4.0.0",
