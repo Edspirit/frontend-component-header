@@ -36,10 +36,7 @@ const ProfileDropdown = () => {
       <Dropdown.Toggle iconAfter={ArrowDropDown} iconBefore={renderAvatar} />
       <Dropdown.Menu alignRight>
         <Dropdown.Item
-          href={`https://apps.${getConfig().LMS_BASE_URL.replace(
-            'https://',
-            '',
-          )}/profile/u/${authenticatedUser?.username}`}
+          href={`${getConfig().ACCOUNT_PROFILE_URL}/u/${authenticatedUser?.username}`}
         >
           <FormattedMessage
             id="header.dropdownOption.profile"
@@ -47,10 +44,7 @@ const ProfileDropdown = () => {
           />
         </Dropdown.Item>
         <Dropdown.Item
-          href={`https://apps.${getConfig().LMS_BASE_URL.replace(
-            'https://',
-            '',
-          )}/account`}
+          href={getConfig().ACCOUNT_SETTINGS_URL}
         >
           <FormattedMessage
             id="header.dropdownOption.account"
@@ -58,10 +52,7 @@ const ProfileDropdown = () => {
           />
         </Dropdown.Item>
         <Dropdown.Item
-          href={`https://apps.${getConfig().LMS_BASE_URL.replace(
-            'https://',
-            '',
-          )}/homepage/overview`}
+          href={`https://${getConfig().BASE_URL}/homepage/overview`}
         >
           <FormattedMessage
             id="header.dropdownOption.dashboard"
