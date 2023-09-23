@@ -52,7 +52,7 @@ const ProfileDropdown = () => {
           />
         </Dropdown.Item>
         <Dropdown.Item
-          href={`https://${getConfig().BASE_URL}/homepage/overview`}
+          href={`https://${getConfig().BASE_URL.replace('apps.', '')}/homepage/overview`}
         >
           <FormattedMessage
             id="header.dropdownOption.dashboard"
