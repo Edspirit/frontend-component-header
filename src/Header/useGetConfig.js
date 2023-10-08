@@ -1,6 +1,7 @@
 import { getConfig } from '@edx/frontend-platform';
 import { useQuery } from 'react-query';
 import logoPlaceholder from '../assets/NavLogo-placeholder.svg';
+import faviconPlaceholder from '../assets/favicon.svg';
 
 const useGetConfig = () => {
   const fetchConfig = async ({ baseURL, instanceConfigAPIUrl }) => {
@@ -24,7 +25,7 @@ const useGetConfig = () => {
   return {
     headerLogo: data?.logo || logoPlaceholder,
     hasBilling: data?.has_billing,
-    favicon: data?.favicon,
+    favicon: data?.favicon || faviconPlaceholder,
     platformName: data?.platform_name,
     gtm: data?.gtm,
     loading: isLoading,
