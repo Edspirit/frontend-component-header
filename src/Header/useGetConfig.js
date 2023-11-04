@@ -21,11 +21,14 @@ const useGetConfig = () => {
         !!getConfig().LMS_BASE_URL && !!getConfig().AC_INSTANCE_CONFIG_API_URL,
     },
   );
-
+  const faviconVersion = Date.now(); // Update this version number when the favicon updates
+  const favicon = data?.favicon
+    ? `${data.favicon}?v=${faviconVersion}`
+    : faviconPlaceholder;
   return {
     headerLogo: data?.logo || logoPlaceholder,
     hasBilling: data?.has_billing,
-    favicon: data?.favicon || faviconPlaceholder,
+    favicon,
     platformName: data?.platform_name,
     gtm: data?.gtm,
     loading: isLoading,
