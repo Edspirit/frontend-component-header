@@ -1,4 +1,4 @@
-import { Button, SearchField } from '@edx/paragon';
+import { Button, SearchField, Skeleton } from '@edx/paragon';
 import React, { useContext } from 'react';
 import { AppContext } from '@edx/frontend-platform/react';
 import { getConfig } from '@edx/frontend-platform';
@@ -17,7 +17,7 @@ import useSetGtm from './useSetGtm';
 
 const DesktopHeader = ({ intl }) => {
   const { authenticatedUser } = useContext(AppContext);
-  const { headerLogo, gtm } = useGetConfig();
+  const { headerLogo, gtm, loading } = useGetConfig();
   useSetGtm(gtm);
   const handleSubmitSearch = (value) => {
     window.location.replace(`/homepage/search?q=${value}`);
@@ -27,9 +27,13 @@ const DesktopHeader = ({ intl }) => {
     <div className="d-flex flex-row justify-content-between align-items-center header-wrapper">
       <div className="left-side-container">
         <div className="logo-container mr-4">
-          <a href="/homepage">
-            <img src={headerLogo ?? DefaultLogo} alt="edspirit-logo" />
-          </a>
+          {loading ? (
+            <Skeleton height={32} width={112} className="mb-1" />
+          ) : (
+            <a href="/homepage">
+              <img src={headerLogo ?? DefaultLogo} alt="default-logo" />
+            </a>
+          )}
         </div>
         <NavHeader />
       </div>
