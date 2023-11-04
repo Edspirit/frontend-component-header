@@ -5,9 +5,10 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import DesktopHeader from './Header/DesktopHeader';
 import MobileHeader from './Header/MobileHeader';
-import SearchModal from './Header/SearchModal';
 import store from './Header/redux/store/store';
 import Head from './Header/Head';
+
+const SearchModal = React.lazy(() => import('./Header/SearchModal'));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,7 +30,9 @@ const Header = () => {
         <Router>
           <header>
             <Head />
-            <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
+            {openModal && (
+              <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
+            )}
             {isMobile ? (
               <MobileHeader setOpenModal={setOpenModal} />
             ) : (
