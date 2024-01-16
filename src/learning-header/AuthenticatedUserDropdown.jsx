@@ -57,7 +57,7 @@ const AuthenticatedUserDropdown = ({ intl, username }) => {
             </Dropdown.Item>
           )}
           <Dropdown.Item href={getConfig().LOGOUT_URL}>
-            {intl.formatMessage(messages.signOut)}
+            DUALIPA
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
