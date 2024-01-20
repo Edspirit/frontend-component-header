@@ -16,6 +16,7 @@ export const handleLogout = () => {
   const logoutUrl = `${getConfig().LMS_BASE_URL}/logout`;
   let redirectTo = window.location.href;
   if (redirectTo.startsWith(getConfig().LEARNING_BASE_URL)) {
+    alert('zzzzzzzz')
     redirectTo = getConfig().MARKETING_SITE_BASE_URL;
   }
   const redirectParams = `?next=${encodeURIComponent(redirectTo)}`;
