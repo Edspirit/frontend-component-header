@@ -2,7 +2,7 @@ import { useMediaQuery } from '@edx/paragon';
 import React, { useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+// import { BrowserRouter as Router } from 'react-router-dom';
 import DesktopHeader from './Header/DesktopHeader';
 import MobileHeader from './Header/MobileHeader';
 import store from './Header/redux/store/store';
@@ -27,19 +27,19 @@ const Header = () => {
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <Router>
-          <header>
-            <Head />
-            {openModal && (
-              <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
-            )}
-            {isMobile ? (
-              <MobileHeader setOpenModal={setOpenModal} />
-            ) : (
-              <DesktopHeader />
-            )}
-          </header>
-        </Router>
+        {/* <Router> */}
+        <header>
+          <Head />
+          {openModal && (
+            <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
+          )}
+          {isMobile ? (
+            <MobileHeader setOpenModal={setOpenModal} />
+          ) : (
+            <DesktopHeader />
+          )}
+        </header>
+        {/* </Router> */}
       </QueryClientProvider>
     </Provider>
   );
