@@ -2,7 +2,7 @@
 import { Icon, IconButton, Nav } from '@edx/paragon';
 import React, { useEffect, useState } from 'react';
 import { Search } from '@edx/paragon/icons';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
 import DefaultLogo from '../assets/NavLogo-placeholder.svg';
 import { ReactComponent as HomeNav } from '../assets/nav-icons/home-nav.svg';
@@ -21,7 +21,8 @@ const MobileHeader = ({ setOpenModal }) => {
   useSetGtm(gtm);
 
   const [ActiveLink, setActiveLink] = useState(null);
-  const location = useLocation();
+  // const location = useLocation();
+  const location = window.location.pathname;
   useEffect(() => {
     setActiveLink(location.pathname);
   }, [location.pathname]);

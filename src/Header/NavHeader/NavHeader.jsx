@@ -1,9 +1,10 @@
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import React from 'react';
 
 const NavHeader = () => {
-  const location = useLocation();
+  // const location = useLocation();
+  const location = window.location.pathname;
 
   return (
     <nav>
