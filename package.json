@@ -69,7 +69,8 @@
     "babel-polyfill": "6.26.0",
     "jest-environment-jsdom": "^29.7.0",
     "react-responsive": "8.2.0",
-    "react-transition-group": "4.4.5"
+    "react-transition-group": "4.4.5",
+    "timeago.js": "4.0.2"
   },
   "peerDependencies": {
     "@edx/frontend-platform": "^5.0.0",
