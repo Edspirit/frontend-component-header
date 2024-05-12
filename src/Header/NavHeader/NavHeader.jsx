@@ -1,5 +1,5 @@
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
-import React from 'react';
+import React, { useState } from 'react';
 
 const NavHeader = () => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
