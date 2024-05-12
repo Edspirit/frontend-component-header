@@ -73,7 +73,8 @@
     "react-query": "^3.39.3",
     "react-redux": "7.2.9",
     "react-responsive": "8.2.0",
-    "react-transition-group": "4.4.5"
+    "react-transition-group": "4.4.5",
+    "timeago.js": "4.0.2"
   },
   "peerDependencies": {
     "@edx/frontend-platform": "^7.0.0 || ^8.0.0",
