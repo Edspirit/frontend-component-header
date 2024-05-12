@@ -1,15 +1,23 @@
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
-import { useLocation } from 'react-router-dom';
 import React from 'react';
 
 const NavHeader = () => {
-  const location = useLocation();
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
+    useEffect(() => {
+    const handleLocationChange = () => setCurrentPath(window.location.pathname);
+    window.addEventListener('popstate', handleLocationChange);
+
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+    };
+    }, []);
+  
   return (
     <nav>
       <ul className="nav-wrapper">
         <a
-          className={location.pathname === '/homepage/overview' ? 'active' : ''}
+          className={currentPath=== '/homepage/overview' ? 'active' : ''}
           href="/homepage/overview"
         >
           <div className="border-bottom" />
@@ -23,7 +31,7 @@ const NavHeader = () => {
         <a
           href="/homepage/inprogress"
           className={
-            location.pathname === '/homepage/inprogress' ? 'active' : ''
+            currentPath === '/homepage/inprogress' ? 'active' : ''
           }
         >
           <li>
@@ -37,7 +45,7 @@ const NavHeader = () => {
         <a
           href="/homepage/completed"
           className={
-            location.pathname === '/homepage/completed' ? 'active' : ''
+            currentPath === '/homepage/completed' ? 'active' : ''
           }
         >
           <li>
@@ -50,7 +58,7 @@ const NavHeader = () => {
         </a>
         <a
           href="/homepage/discover"
-          className={location.pathname === '/homepage/discover' ? 'active' : ''}
+          className={currentPath === '/homepage/discover' ? 'active' : ''}
         >
           <li>
             <div className="border-bottom" />
