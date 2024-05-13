@@ -36,7 +36,7 @@
   "devDependencies": {
     "@edx/brand": "npm:@openedx/brand-openedx@^1.2.2",
     "@edx/browserslist-config": "^1.1.1",
-    "@edx/frontend-platform": "5.5.4",
+    "@edx/frontend-platform": "4.6.0",
     "@edx/reactifex": "^2.1.1",
     "@openedx/frontend-build": "14.0.3",
     "@openedx/paragon": "22.3.1",
@@ -73,7 +73,7 @@
     "timeago.js": "4.0.2"
   },
   "peerDependencies": {
-    "@edx/frontend-platform": "^5.0.0",
+    "@edx/frontend-platform": "^4.0.0",
     "@openedx/paragon": ">= 21.5.7 < 23.0.0",
     "prop-types": "^15.5.10",
     "react": "^16.9.0 || ^17.0.0",
