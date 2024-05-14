@@ -6,6 +6,7 @@ import useGetConfig from './useGetConfig';
 import { injectIntl,intlShape } from '@edx/frontend-platform/i18n';
 import messages from '../Header.messages';
 import PropTypes from 'prop-types';
+import { getConfig } from '@edx/frontend-platform';
 
 const Head = ({ intl,mfeTitle }) => {
   const { favicon, platformName} = useGetConfig();
