@@ -6,6 +6,7 @@ import DesktopHeader from './Header/DesktopHeader';
 import MobileHeader from './Header/MobileHeader';
 import store from './Header/redux/store/store';
 import Head from './Header/Head';
+import PropTypes from 'prop-types';
 
 const SearchModal = React.lazy(() => import('./Header/SearchModal'));
 
@@ -19,7 +20,7 @@ const queryClient = new QueryClient({
     },
   },
 });
-const Header = () => {
+const Header = ({mfeTitle}) => {
   const isMobile = useMediaQuery({ maxWidth: '768px' });
   const [openModal, setOpenModal] = useState(false);
 
@@ -27,7 +28,7 @@ const Header = () => {
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
           <header>
-            <Head />
+          <Head mfeTitle={mfeTitle} />
             {openModal && (
               <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
             )}
@@ -40,6 +41,14 @@ const Header = () => {
       </QueryClientProvider>
     </Provider>
   );
+};
+
+Header.propTypes = {
+  mfeTitle: PropTypes.string,
+};
+
+Header.defaultProps = {
+  mfeTitle: null,
 };
 
 export default Header;

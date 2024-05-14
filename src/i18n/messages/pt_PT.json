@@ -29,5 +29,7 @@
   "header.menu.account.label": "Conta",
   "header.menu.orderHistory.label": "Histórico de Encomendas",
   "header.navigation.skipNavLink": "Saltar para o conteúdo principal.",
-  "header.menu.signOut.label": "Terminar Sessão"
+  "header.menu.signOut.label": "Terminar Sessão",
+  "account.page.title": "Conta | {siteName}",
+  "profile.page.title": "Perfil | {siteName}"
 }
