@@ -111,6 +111,16 @@ const messages = defineMessages({
     defaultMessage: 'App',
     description: 'The aria label for the app Nav',
   },
+  'account.page.title': {
+    id: 'account.page.title',
+    defaultMessage: 'Account | {siteName}',
+    description: 'Title tag',
+  },
+  'profile.page.title': {
+    id: 'profile.page.title',
+    defaultMessage: 'Profile | {siteName}',
+    description: 'Title tag',
+  },
 });
 
 export default messages;
