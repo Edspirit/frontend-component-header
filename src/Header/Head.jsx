@@ -31,11 +31,11 @@ const Head = ({ intl,mfeTitle }) => {
   );
 };
 
-Header.propTypes = {
+Head.propTypes = {
   mfeTitle: PropTypes.string,
 };
 
-Header.defaultProps = {
+Head.defaultProps = {
   mfeTitle: null,
   intl: intlShape.isRequired,
 };
