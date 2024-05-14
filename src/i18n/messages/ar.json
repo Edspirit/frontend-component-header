@@ -29,5 +29,7 @@
   "header.menu.account.label": "الحساب",
   "header.menu.orderHistory.label": "سجل الطلبيات",
   "header.navigation.skipNavLink": "التخطي إلى المحتوى الرئيسي",
-  "header.menu.signOut.label": "تسجيل الخروج"
+  "header.menu.signOut.label": "تسجيل الخروج",
+  "account.page.title": "الحساب | {siteName}",
+  "profile.page.title": "الملف الشخصي | {siteName}"
 }

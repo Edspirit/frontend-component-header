@@ -45,5 +45,7 @@
   "header.search.placeholder": "مایل به دریافت چه آموزشی هستید؟",
   "header.nav.completed": "تکمیل شده",
   "searchModal.recentlyViewed.text": "بازدید اخیر",
-  "clearAll.text": "پاک کردن"
+  "clearAll.text": "پاک کردن",
+  "account.page.title": "حساب کاربری | {siteName}",
+  "profile.page.title": "پرونده کاربری {siteName}"
 }

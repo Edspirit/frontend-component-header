@@ -29,5 +29,7 @@
   "header.menu.account.label": "Compte",
   "header.menu.orderHistory.label": "Historique des commandes",
   "header.navigation.skipNavLink": "Passer au contenu principal.",
-  "header.menu.signOut.label": "Se déconnecter"
+  "header.menu.signOut.label": "Se déconnecter",
+  "account.page.title": "Compte | {siteName}",
+  "profile.page.title": "Profil | {siteName}"
 }
