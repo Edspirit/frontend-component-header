@@ -31,5 +31,6 @@
   "header.navigation.skipNavLink": "Перейти до головного змісту.",
   "header.menu.signOut.label": "Sign Out",
   "account.page.title": "Account | {siteName}",
-  "profile.page.title": "Профіль | {siteName}"
+  "profile.page.title": "Профіль | {siteName}",
+  "course-authoring.page.title": "Авторство курсу | {siteName}"
 }

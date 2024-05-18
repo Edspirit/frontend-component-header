@@ -31,5 +31,6 @@
   "header.navigation.skipNavLink": "التخطي إلى المحتوى الرئيسي",
   "header.menu.signOut.label": "تسجيل الخروج",
   "account.page.title": "الحساب | {siteName}",
-  "profile.page.title": "الملف الشخصي | {siteName}"
+  "profile.page.title": "الملف الشخصي | {siteName}",
+  "course-authoring.page.title": "تأليف الدورة | {siteName}"
 }

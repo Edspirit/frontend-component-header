@@ -47,5 +47,6 @@
   "searchModal.recentlyViewed.text": "بازدید اخیر",
   "clearAll.text": "پاک کردن",
   "account.page.title": "حساب کاربری | {siteName}",
-  "profile.page.title": "پرونده کاربری {siteName}"
+  "profile.page.title": "پرونده کاربری {siteName}",
+  "course-authoring.page.title": "تالیف دوره | {siteName}"
 }
