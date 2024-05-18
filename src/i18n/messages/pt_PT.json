@@ -31,5 +31,6 @@
   "header.navigation.skipNavLink": "Saltar para o conteúdo principal.",
   "header.menu.signOut.label": "Terminar Sessão",
   "account.page.title": "Conta | {siteName}",
-  "profile.page.title": "Perfil | {siteName}"
+  "profile.page.title": "Perfil | {siteName}",
+  "course-authoring.page.title": "Criação de cursos | {siteName}"
 }
