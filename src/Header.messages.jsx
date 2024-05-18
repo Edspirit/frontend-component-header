@@ -116,6 +116,36 @@ const messages = defineMessages({
     defaultMessage: 'Profile | {siteName}',
     description: 'Title tag',
   },
+  'discussions.page.title': {
+    id: 'discussions.page.title',
+    defaultMessage: 'Discussions | {siteName}',
+    description: 'Title tag',
+  },
+  'gradebook.page.title': {
+    id: 'gradebook.page.title',
+    defaultMessage: 'Gradebook | {siteName}',
+    description: 'Title tag',
+  },
+  'learner-dash.title': {
+    id: 'learner-dash.title',
+    description: 'Learner Home | {siteName}',
+    defaultMessage: 'Learner Home',
+  },
+  'ora-grading.page.title': {
+    id: 'ora-grading.page.title',
+    defaultMessage: 'ORA staff grading | {siteName}',
+    description: 'Title tag',
+  },
+  'communications.page.title': {
+    id: 'communications.page.title',
+    defaultMessage: 'Communications | {siteName}',
+    description: 'Title tag',
+  },
+  'course-authoring.page.title': {
+    id: 'course-authoring.page.title',
+    defaultMessage: 'Course Authoring | {siteName}',
+    description: 'Title tag',
+  },
 });
 
 export default messages;
