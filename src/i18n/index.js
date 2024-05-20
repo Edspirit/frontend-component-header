@@ -14,6 +14,7 @@ import frcaMessages from './messages/fr_CA.json';
 import ititMessages from './messages/it_IT.json';
 import ptptMessages from './messages/pt_PT.json';
 import dedeMessages from './messages/de_DE.json';
+import zhhkMessages from './messages/zh_HK.json';
 
 const messages = {
   ar: arMessages,
@@ -22,6 +23,7 @@ const messages = {
   'es-419': es419Messages,
   fr: frMessages,
   'zh-cn': zhcnMessages,
+  'zh-hk': zhhkMessages,
   ru: ruMessages,
   uk: ukMessages,
   pt: ptMessages,

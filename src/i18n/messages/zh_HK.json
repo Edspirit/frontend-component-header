@@ -1,0 +1,18 @@
+{
+  "header.nav.overview": "概覽",
+  "header.register": "註冊",
+  "header.signIn": "登入",
+  "header.dropdownOption.signOut": "登出",
+  "header.dropdownOption.orderHistory": "訂單歷史",
+  "header.dropdownOption.dashboard": "儀表板",
+  "header.dropdownOption.profile": "個人資料",
+  "header.dropdown.subjects": "科目",
+  "header.nav.dashboard": "儀表板",
+  "header.nav.discover": "發現",
+  "header.nav.inProgress": "進行中",
+  "header.search.placeholder": "你想學什麼？",
+  "header.dropdownOption.account": "帳戶",
+  "header.nav.completed": "已完成",
+  "clearAll.text": "清除所有",
+  "searchModal.recentlyViewed.text": "最近查看"
+}
