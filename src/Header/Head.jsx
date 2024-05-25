@@ -24,7 +24,7 @@ const Head = () => {
     <Helmet>
       <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       <link rel="apple-touch-icon" href={safariFavicon} />
-
+       <link rel="mask-icon" href={favicon} color="#000000" />
     </Helmet>
   );
 };
