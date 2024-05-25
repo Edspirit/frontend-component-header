@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { getLocale } from '@edx/frontend-platform/i18n';
 import useGetConfig from './useGetConfig';
+import safariFavicon from '../assets/favicon.png';
 
 const Head = () => {
   const { favicon } = useGetConfig();
@@ -22,6 +23,8 @@ const Head = () => {
   return (
     <Helmet>
       <link rel="shortcut icon" href={favicon} type="image/x-icon" />
+      <link rel="apple-touch-icon" href={safariFavicon} />
+
     </Helmet>
   );
 };
