@@ -24,7 +24,12 @@ const Head = () => {
     <Helmet>
       <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       <link rel="apple-touch-icon" href={safariFavicon} />
-       <link rel="mask-icon" href={favicon} color="#000000" />
+      <link rel="mask-icon" href={favicon} color="#000000" />
+      
+      <link rel="apple-touch-icon" sizes="180x180" href={safariFavicon} />
+      <link rel="apple-touch-icon" sizes="152x152" href={safariFavicon} />
+      <link rel="apple-touch-icon" sizes="120x120" href={safariFavicon} />
+      <link rel="apple-touch-icon" sizes="76x76" href={safariFavicon} />
     </Helmet>
   );
 };
