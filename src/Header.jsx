@@ -1,5 +1,5 @@
 import { useMediaQuery } from '@edx/paragon';
-import React, { useState } from 'react';
+import React, { Suspense,useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
 import DesktopHeader from './Header/DesktopHeader';
@@ -29,9 +29,11 @@ const Header = ({mfeTitle}) => {
       <QueryClientProvider client={queryClient}>
           <header>
           <Head mfeTitle={mfeTitle} />
-            {openModal && (
-              <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
-            )}
+            <Suspense fallback={<div>Loading...</div>}>
+              {openModal && (
+                <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
+              )}
+            </Suspense>
             {isMobile ? (
               <MobileHeader setOpenModal={setOpenModal} />
             ) : (
