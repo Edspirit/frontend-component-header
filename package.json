@@ -70,8 +70,6 @@
     "jest-environment-jsdom": "^29.7.0",
     "classnames": "2.3.2",
     "lodash": "4.17.21",
-    "react-query": "^3.39.3",
-    "react-redux": "7.2.9",
     "react-responsive": "8.2.0",
     "react-transition-group": "4.4.5",
     "timeago.js": "4.0.2"
