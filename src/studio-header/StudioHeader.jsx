@@ -6,6 +6,7 @@ import { ensureConfig } from '@edx/frontend-platform';
 
 import MobileHeader from './MobileHeader';
 import HeaderBody from './HeaderBody';
+import useGetConfig from '../Header/useGetConfig';
 
 ensureConfig([
   'STUDIO_BASE_URL',
@@ -19,8 +20,9 @@ const StudioHeader = ({
   number, org, title, isHiddenMainMenu, mainMenuDropdowns, outlineLink, searchButtonAction,
 }) => {
   const { authenticatedUser, config } = useContext(AppContext);
+  const { headerLogo } = useGetConfig();
   const props = {
-    logo: config.LOGO_URL,
+    logo: headerLogo,
     logoAltText: `Studio ${config.SITE_NAME}`,
     number,
     org,
