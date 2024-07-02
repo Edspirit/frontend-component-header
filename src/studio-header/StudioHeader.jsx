@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import MobileHeader from './MobileHeader';
 import HeaderBody from './HeaderBody';
+import Head from './Head';
 
 ensureConfig([
   'STUDIO_BASE_URL',
@@ -50,6 +51,7 @@ const StudioHeader = ({
 
   return (
     <QueryClientProvider client={queryClient}>
+       <Head/>
       <div className="studio-header">
         <a className="nav-skip sr-only sr-only-focusable" href="#main">Skip to content</a>
         <Responsive maxWidth={841}>
