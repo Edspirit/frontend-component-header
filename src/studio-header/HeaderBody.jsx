@@ -17,6 +17,7 @@ import UserMenu from './UserMenu';
 import BrandNav from './BrandNav';
 import NavDropdownMenu from './NavDropdownMenu';
 import messages from './messages';
+import useGetConfig from '../Header/useGetConfig';
 
 const HeaderBody = ({
   logo,
@@ -39,12 +40,13 @@ const HeaderBody = ({
   searchButtonAction,
 }) => {
   const intl = useIntl();
+  const { headerLogo } = useGetConfig();
 
   const renderBrandNav = (
     <BrandNav
       {...{
         studioBaseUrl,
-        logo,
+        logo: headerLogo,
         logoAltText,
       }}
     />

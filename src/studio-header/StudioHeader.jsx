@@ -32,9 +32,8 @@ const StudioHeader = ({
   number, org, title, isHiddenMainMenu, mainMenuDropdowns, outlineLink, searchButtonAction,
 }) => {
   const { authenticatedUser, config } = useContext(AppContext);
-  const { headerLogo } = useGetConfig();
   const props = {
-    logo: headerLogo,
+    logo,
     logoAltText: `Studio ${config.SITE_NAME}`,
     number,
     org,
