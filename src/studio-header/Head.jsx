@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { getLocale } from '@edx/frontend-platform/i18n';
-import useGetConfig from './useGetConfig';
+import useGetConfig from '../Header/useGetConfig';
 
 
 const Head = () => {
