@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Responsive from 'react-responsive';
 import { AppContext } from '@edx/frontend-platform/react';
 import { ensureConfig } from '@edx/frontend-platform';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import MobileHeader from './MobileHeader';
 import HeaderBody from './HeaderBody';
@@ -15,6 +16,17 @@ ensureConfig([
   'LOGIN_URL',
   'LOGO_URL',
 ], 'Studio Header component');
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // Set staleTime to 5 minutes
+      staleTime: 5 * 60 * 1000,
+      // Set cacheTime to 60 minutes
+      cacheTime: 60 * 60 * 1000,
+    },
+  },
+});
 
 const StudioHeader = ({
   number, org, title, isHiddenMainMenu, mainMenuDropdowns, outlineLink, searchButtonAction,
@@ -39,15 +51,17 @@ const StudioHeader = ({
   };
 
   return (
-    <div className="studio-header">
-      <a className="nav-skip sr-only sr-only-focusable" href="#main">Skip to content</a>
-      <Responsive maxWidth={841}>
-        <MobileHeader {...props} />
-      </Responsive>
-      <Responsive minWidth={842}>
-        <HeaderBody {...props} />
-      </Responsive>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="studio-header">
+        <a className="nav-skip sr-only sr-only-focusable" href="#main">Skip to content</a>
+        <Responsive maxWidth={841}>
+          <MobileHeader {...props} />
+        </Responsive>
+        <Responsive minWidth={842}>
+          <HeaderBody {...props} />
+        </Responsive>
+      </div>
+    </QueryClientProvider>
   );
 };
 
