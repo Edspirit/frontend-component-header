@@ -7,7 +7,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import MobileHeader from './MobileHeader';
 import HeaderBody from './HeaderBody';
-import useGetConfig from '../Header/useGetConfig';
 
 ensureConfig([
   'STUDIO_BASE_URL',
@@ -33,7 +32,7 @@ const StudioHeader = ({
 }) => {
   const { authenticatedUser, config } = useContext(AppContext);
   const props = {
-    logo,
+    logo: config.LOGO_URL,
     logoAltText: `Studio ${config.SITE_NAME}`,
     number,
     org,
