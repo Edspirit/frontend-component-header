@@ -7,7 +7,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import MobileHeader from './MobileHeader';
 import HeaderBody from './HeaderBody';
-import Head from './Head';
+import Head from '../Header/Head';
 
 ensureConfig([
   'STUDIO_BASE_URL',
@@ -29,7 +29,7 @@ const queryClient = new QueryClient({
 });
 
 const StudioHeader = ({
-  number, org, title, isHiddenMainMenu, mainMenuDropdowns, outlineLink, searchButtonAction,
+  number, org, title, isHiddenMainMenu, mainMenuDropdowns, outlineLink, searchButtonAction,mfeTitle
 }) => {
   const { authenticatedUser, config } = useContext(AppContext);
   const props = {
@@ -51,7 +51,7 @@ const StudioHeader = ({
 
   return (
     <QueryClientProvider client={queryClient}>
-       <Head/>
+      <Head mfeTitle={mfeTitle} />
       <div className="studio-header">
         <a className="nav-skip sr-only sr-only-focusable" href="#main">Skip to content</a>
         <Responsive maxWidth={841}>
@@ -80,6 +80,7 @@ StudioHeader.propTypes = {
   })),
   outlineLink: PropTypes.string,
   searchButtonAction: PropTypes.func,
+  mfeTitle: PropTypes.string,
 };
 
 StudioHeader.defaultProps = {
@@ -89,6 +90,7 @@ StudioHeader.defaultProps = {
   mainMenuDropdowns: [],
   outlineLink: null,
   searchButtonAction: null,
+  mfeTitle: null,
 };
 
 export default StudioHeader;
