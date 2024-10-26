@@ -25,6 +25,7 @@
   "header.label.app.nav": "Application",
   "header.menu.dashboard.label": "Tableau de bord",
   "header.help.label": "Aide",
+  "header.nav.home": "Accueil",
   "header.menu.profile.label": "Profil",
   "header.menu.account.label": "Compte",
   "header.menu.orderHistory.label": "Historique des commandes",
