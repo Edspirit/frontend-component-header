@@ -30,5 +30,6 @@
   "header.menu.orderHistory.label": "Order History",
   "header.navigation.skipNavLink": "Skip to main content.",
   "header.menu.signOut.label": "Sign Out",
+  "header.nav.home": "Home",
   "account.page.title": "Account | {siteName}"
 }

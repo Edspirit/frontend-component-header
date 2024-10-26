@@ -30,6 +30,7 @@
   "header.menu.orderHistory.label": "Cronologia Ordini",
   "header.navigation.skipNavLink": "Passa al contenuto principale. ",
   "header.menu.signOut.label": "Esci",
+  "header.nav.home": "Home",
   "account.page.title": "Conto | {siteName}",
   "course-authoring.page.title": "Creazione del corso | {siteName}"
 }

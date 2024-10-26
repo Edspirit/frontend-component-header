@@ -30,6 +30,7 @@
   "header.menu.orderHistory.label": "Order History",
   "header.navigation.skipNavLink": "Skip to main content.",
   "header.menu.signOut.label": "Sign Out",
+  "header.nav.home": "主頁",
   "account.page.title": "帐户 | {siteName}",
   "profile.page.title": "简介 | {siteName}",
   "course-authoring.page.title": "创作课程 | {siteName}"

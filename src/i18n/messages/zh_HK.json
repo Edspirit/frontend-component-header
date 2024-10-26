@@ -33,6 +33,7 @@
   "header.nav.overview": "概覽",
   "header.register": "註冊",
   "header.signIn": "登入",
+  "header.nav.home": "主頁",
   "header.dropdownOption.signOut": "登出",
   "header.dropdownOption.orderHistory": "訂單歷史",
   "header.dropdownOption.dashboard": "儀表板",

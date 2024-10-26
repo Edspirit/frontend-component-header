@@ -47,6 +47,7 @@
   "searchModal.recentlyViewed.text": "تم الاطلاع عليها حديثاً",
   "header.search.placeholder": "ماذا تريد أن تتعلم؟",
   "clearAll.text": "مسح كل شيء",
+  "header.nav.home": "الصفحة الرئيسية",
   "account.page.title": "صفحة الحساب | {siteName}",
   "profile.page.title": "صفحة الملف الشخصي | {siteName}",
   "course-authoring.page.title": "صفحة تأليف الدورة | {siteName}"
