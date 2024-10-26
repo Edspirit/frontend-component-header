@@ -27,6 +27,7 @@
   "header.help.label": "Help",
   "header.menu.profile.label": "Profile",
   "header.menu.account.label": "Account",
+  "header.nav.home": "Startseite",
   "header.menu.orderHistory.label": "Order History",
   "header.navigation.skipNavLink": "Skip to main content.",
   "header.menu.signOut.label": "Sign Out",
