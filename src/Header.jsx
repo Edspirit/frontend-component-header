@@ -1,4 +1,4 @@
-import { useMediaQuery } from '@edx/paragon';
+import { useMediaQuery } from '@openedx/paragon';
 import React, { Suspense,useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Provider } from 'react-redux';
