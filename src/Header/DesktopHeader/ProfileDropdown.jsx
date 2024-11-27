@@ -1,8 +1,8 @@
 import { AppContext } from '@edx/frontend-platform/react';
-import { Dropdown, Icon } from '@edx/paragon';
+import { Dropdown, Icon } from '@openedx/paragon';
 import React, { useContext } from 'react';
 import { FormattedMessage } from '@edx/frontend-platform/i18n';
-import { ArrowDropDown } from '@edx/paragon/icons';
+import { ArrowDropDown } from '@openedx/paragon/icons';
 import { getConfig } from '@edx/frontend-platform';
 import { ReactComponent as Avatar } from '../../assets/header-avatar.svg';
 import { handleLogout } from '../handleRedirect';

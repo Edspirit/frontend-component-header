@@ -6,9 +6,9 @@ import {
   injectIntl,
   intlShape,
 } from '@edx/frontend-platform/i18n';
-import { FullscreenModal, Icon, SearchField } from '@edx/paragon';
+import { FullscreenModal, Icon, SearchField } from '@openedx/paragon';
 import React, { useEffect, useMemo, useState } from 'react';
-import { ArrowBack, Close } from '@edx/paragon/icons';
+import { ArrowBack, Close } from '@openedx/paragon/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import messages from '../generic/messages';
 import useSearchSuggestions from './useSearchSuggestions';

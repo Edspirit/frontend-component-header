@@ -1,4 +1,4 @@
-import { Button, SearchField, Skeleton } from '@edx/paragon';
+import { Button, SearchField, Skeleton } from '@openedx/paragon';
 import React, { useContext } from 'react';
 import { AppContext } from '@edx/frontend-platform/react';
 import { getConfig } from '@edx/frontend-platform';
