@@ -36,7 +36,7 @@
   "devDependencies": {
     "@edx/brand": "npm:@openedx/brand-openedx@^1.2.2",
     "@edx/browserslist-config": "^1.1.1",
-    "@edx/frontend-platform": "5.5.4",
+    "@edx/frontend-platform": "8.1.2",
     "@edx/reactifex": "^2.1.1",
     "@openedx/frontend-build": "14.2.0",
     "@openedx/paragon": "22.10.0",
@@ -68,11 +68,10 @@
     "jest-environment-jsdom": "^29.7.0",
     "react-responsive": "8.2.0",
     "react-transition-group": "4.4.5",
-    "timeago.js": "4.0.2",
     "react-query": "^3.39.3"
   },
   "peerDependencies": {
-    "@edx/frontend-platform": "^5.0.0",
+    "@edx/frontend-platform": "^7.0.0 || ^8.0.0",
     "@openedx/paragon": ">= 21.5.7 < 23.0.0",
     "prop-types": "^15.5.10",
     "react": "^16.9.0 || ^17.0.0",
