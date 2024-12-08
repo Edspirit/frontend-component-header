@@ -19,7 +19,8 @@ const messages = defineMessages({
   'header.label.account.menu.for': {
     id: 'header.label.account.menu.for',
     defaultMessage: 'Account menu for {username}',
-    description: 'The aria label for the account menu trigger when the username is displayed in it',
+    description:
+      'The aria label for the account menu trigger when the username is displayed in it',
   },
   'header.label.main.nav': {
     id: 'header.label.main.nav',
@@ -44,7 +45,13 @@ const messages = defineMessages({
   'header.label.courseOutline': {
     id: 'header.label.courseOutline',
     defaultMessage: 'Back to course outline in Studio',
-    description: 'The aria label for the link back to the Studio Course Outline',
+    description:
+      'The aria label for the link back to the Studio Course Outline',
+  },
+  'header.label.search.nav': {
+    id: 'header.label.search.nav',
+    defaultMessage: 'Search content',
+    description: 'The aria label for the search content button nav',
   },
   'header.label.search.nav': {
     id: 'header.label.search.nav',

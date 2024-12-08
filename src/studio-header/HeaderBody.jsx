@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from '@edx/frontend-platform/i18n';
 import classNames from 'classnames';
+
 import {
   ActionRow,
   Button,
@@ -18,6 +19,7 @@ import UserMenu from './UserMenu';
 import BrandNav from './BrandNav';
 import NavDropdownMenu from './NavDropdownMenu';
 import messages from './messages';
+import useGetConfig from '../Header/useGetConfig';
 
 const HeaderBody = ({
   logo,
@@ -41,17 +43,18 @@ const HeaderBody = ({
   containerProps,
 }) => {
   const intl = useIntl();
+  const { headerLogo } = useGetConfig();
 
   const renderBrandNav = (
     <BrandNav
       {...{
         studioBaseUrl,
-        logo,
+        logo: headerLogo,
         logoAltText,
       }}
     />
   );
-
+  
   const { className: containerClassName, ...restContainerProps } = containerProps || {};
 
   return (
@@ -103,7 +106,7 @@ const HeaderBody = ({
                 {mainMenuDropdowns.map(dropdown => {
                   const { id, buttonTitle, items } = dropdown;
                   return (
-                    <NavDropdownMenu
+                                       <NavDropdownMenu
                       key={id}
                       {...{
                         id, buttonTitle, items,
@@ -124,6 +127,7 @@ const HeaderBody = ({
               onClick={searchButtonAction}
               aria-label={intl.formatMessage(messages['header.label.search.nav'])}
               alt={intl.formatMessage(messages['header.label.search.nav'])}
+
             />
           </Nav>
         )}
@@ -170,6 +174,7 @@ HeaderBody.propTypes = {
   outlineLink: PropTypes.string,
   searchButtonAction: PropTypes.func,
   containerProps: PropTypes.shape(Container.propTypes),
+
 };
 
 HeaderBody.defaultProps = {
@@ -190,6 +195,7 @@ HeaderBody.defaultProps = {
   outlineLink: null,
   searchButtonAction: null,
   containerProps: {},
+
 };
 
 export default HeaderBody;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useToggle, ModalPopup } from '@openedx/paragon';
 import HeaderBody from './HeaderBody';
 import MobileMenu from './MobileMenu';
+import useGetConfig from '../Header/useGetConfig';
 
 const MobileHeader = ({
   mainMenuDropdowns,
@@ -10,11 +11,13 @@ const MobileHeader = ({
 }) => {
   const [isOpen, , close, toggle] = useToggle(false);
   const [target, setTarget] = useState(null);
+  const { headerLogo } = useGetConfig();
 
   return (
     <>
       <HeaderBody
         {...props}
+        logo={headerLogo} 
         isMobile
         setModalPopupTarget={setTarget}
         toggleModalPopup={toggle}
