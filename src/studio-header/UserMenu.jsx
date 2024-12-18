@@ -10,7 +10,7 @@ import getUserMenuItems from './utils';
 const UserMenu = ({
   username,
   studioBaseUrl,
-  logoutUrl,
+  handleLogout,
   authenticatedUserAvatar,
   isMobile,
   isAdmin,
@@ -40,7 +40,7 @@ const UserMenu = ({
       id="user-dropdown-menu"
       items={getUserMenuItems({
         studioBaseUrl,
-        logoutUrl,
+        handleLogout,
         intl,
         isAdmin,
       })}
@@ -51,7 +51,7 @@ const UserMenu = ({
 UserMenu.propTypes = {
   username: PropTypes.string,
   studioBaseUrl: PropTypes.string.isRequired,
-  logoutUrl: PropTypes.string.isRequired,
+  handleLogout: PropTypes.func.isRequired,
   authenticatedUserAvatar: PropTypes.string,
   isMobile: PropTypes.bool,
   isAdmin: PropTypes.bool,

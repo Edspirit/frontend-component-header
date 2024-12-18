@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import MobileHeader from './MobileHeader';
 import HeaderBody from './HeaderBody';
 import Head from '../Header/Head';
+import { handleLogout } from '../Header/handleRedirect';
 
 ensureConfig([
   'STUDIO_BASE_URL',
@@ -43,7 +44,7 @@ const StudioHeader = ({
     isAdmin: authenticatedUser?.administrator,
     authenticatedUserAvatar: authenticatedUser?.avatar,
     studioBaseUrl: config.STUDIO_BASE_URL,
-    logoutUrl: config.LOGOUT_URL,
+    handleLogout,
     isHiddenMainMenu,
     mainMenuDropdowns,
     outlineLink,

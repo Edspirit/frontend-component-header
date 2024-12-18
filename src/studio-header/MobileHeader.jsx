@@ -40,7 +40,7 @@ const MobileHeader = ({
 
 MobileHeader.propTypes = {
   studioBaseUrl: PropTypes.string.isRequired,
-  logoutUrl: PropTypes.string.isRequired,
+  handleLogout: PropTypes.func.isRequired,
   number: PropTypes.string,
   org: PropTypes.string,
   title: PropTypes.string,

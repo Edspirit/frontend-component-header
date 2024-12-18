@@ -30,7 +30,7 @@ const HeaderBody = ({
   username,
   isAdmin,
   studioBaseUrl,
-  logoutUrl,
+  handleLogout,
   authenticatedUserAvatar,
   isMobile,
   setModalPopupTarget,
@@ -136,7 +136,7 @@ const HeaderBody = ({
             {...{
               username,
               studioBaseUrl,
-              logoutUrl,
+              handleLogout,
               authenticatedUserAvatar,
               isAdmin,
             }}
@@ -149,7 +149,7 @@ const HeaderBody = ({
 
 HeaderBody.propTypes = {
   studioBaseUrl: PropTypes.string.isRequired,
-  logoutUrl: PropTypes.string.isRequired,
+  handleLogout: PropTypes.func.isRequired,
   setModalPopupTarget: PropTypes.func,
   toggleModalPopup: PropTypes.func,
   isModalPopupOpen: PropTypes.bool,

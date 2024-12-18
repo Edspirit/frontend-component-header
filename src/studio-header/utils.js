@@ -1,18 +1,18 @@
 import messages from './messages';
 
-const getUserMenuItems = ({
-  studioBaseUrl,
-  logoutUrl,
-  intl,
-  isAdmin,
-}) => {
+const getUserMenuItems = ({ studioBaseUrl, handleLogout, intl, isAdmin }) => {
   let items = [
     {
       href: `${studioBaseUrl}`,
       title: intl.formatMessage(messages['header.user.menu.studio']),
-    }, {
-      href: `${logoutUrl}`,
-      title: intl.formatMessage(messages['header.user.menu.logout']),
+    },
+    {
+      href: '#',
+      title: intl.formatMessage(messages['header.user.menu.signOut']),
+      onClick: (e) => {
+        e.preventDefault();
+        handleLogout();
+      },
     },
   ];
   if (isAdmin) {
@@ -20,9 +20,14 @@ const getUserMenuItems = ({
       {
         href: `${studioBaseUrl}`,
         title: intl.formatMessage(messages['header.user.menu.studio']),
-      }, {
-        href: `${logoutUrl}`,
-        title: intl.formatMessage(messages['header.user.menu.logout']),
+      },
+      {
+        href: '#',
+        title: intl.formatMessage(messages['header.user.menu.signOut']),
+        onClick: (e) => {
+          e.preventDefault();
+          handleLogout();
+        },
       },
     ];
   }
