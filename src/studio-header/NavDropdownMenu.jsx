@@ -23,6 +23,7 @@ const NavDropdownMenu = ({
         key={`${item.title}-dropdown-item`}
         to={item.href}
         className="small"
+        onClick={item.onClick}
       >
         {item.title}
       </Dropdown.Item>
@@ -36,6 +37,7 @@ NavDropdownMenu.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     href: PropTypes.string.isRequired,
     title: PropTypes.node.isRequired,
+    onClick: PropTypes.func,
   })).isRequired,
 };
 
