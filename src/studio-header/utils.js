@@ -8,7 +8,7 @@ const getUserMenuItems = ({ studioBaseUrl, handleLogout, intl, isAdmin }) => {
     },
     {
       href: '#',
-      title: intl.formatMessage(messages['header.user.menu.signOut']),
+      title: intl.formatMessage(messages['header.user.menu.logout']),
       onClick: (e) => {
         e.preventDefault();
         handleLogout();
@@ -23,7 +23,7 @@ const getUserMenuItems = ({ studioBaseUrl, handleLogout, intl, isAdmin }) => {
       },
       {
         href: '#',
-        title: intl.formatMessage(messages['header.user.menu.signOut']),
+        title: intl.formatMessage(messages['header.user.menu.logout']),
         onClick: (e) => {
           e.preventDefault();
           handleLogout();
