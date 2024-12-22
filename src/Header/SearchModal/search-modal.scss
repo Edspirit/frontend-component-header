@@ -1,7 +1,3 @@
-//invisible header in search modal in responsive
-.pgn__modal-header {
-  display: none;
-}
 .pgn__modal-close-container {
   display: none;
 }
@@ -14,6 +10,11 @@
   }
 }
 .search-modal {
+  //invisible header in search modal in responsive
+  .pgn__modal-header {
+    display: none;
+  }
+
   p {
     margin-bottom: 0;
   }
